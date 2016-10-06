@@ -17,9 +17,15 @@ namespace adwWEB.Controllers
         private adwentureEntities db = new adwentureEntities();
 
         // GET: Products
-        public ActionResult Index(int? page)
+        public ActionResult Index(int? page,string sub,string cat)
         {
-
+            /*
+                  <text>Subcategory</text>@Html.DropDownList("sub", new SelectList(ViewBag.sub))
+        <text>Category</text>@Html.DropDownList("cat", new SelectList(ViewBag.cat))
+        <input type="submit" value="search" />
+             */
+            ViewBag.cat = db.Product;
+            ViewBag.sub = db.ProductSubcategory;
             var result1 = (from Product in db.Product
                           join ProductSubcategory in db.ProductSubcategory on new { ProductSubcategoryID = (int)Product.ProductSubcategoryID } equals new { ProductSubcategoryID = ProductSubcategory.ProductSubcategoryID } into ProductSubcategory_join
                           from ProductSubcategory in ProductSubcategory_join.DefaultIfEmpty()
