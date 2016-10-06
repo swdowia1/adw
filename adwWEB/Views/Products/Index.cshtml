@@ -8,7 +8,7 @@
 }
 
 <p>
-    @using (Html.BeginForm("Index", "Product", FormMethod.Get))
+    @using (Html.BeginForm("Index", "Products", FormMethod.Get))
     {
         <text>Subcategory</text>@Html.DropDownList("sub", new SelectList(ViewBag.sub))
         <text>Category</text>@Html.DropDownList("cat", new SelectList(ViewBag.cat))

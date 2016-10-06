@@ -24,8 +24,8 @@ namespace adwWEB.Controllers
         <text>Category</text>@Html.DropDownList("cat", new SelectList(ViewBag.cat))
         <input type="submit" value="search" />
              */
-            ViewBag.cat = db.Product;
-            ViewBag.sub = db.ProductSubcategory;
+            ViewBag.cat = db.ProductCategory.Select(k=>k.Name);
+            ViewBag.sub = db.ProductSubcategory.Select(k => k.Name);
             var result1 = (from Product in db.Product
                           join ProductSubcategory in db.ProductSubcategory on new { ProductSubcategoryID = (int)Product.ProductSubcategoryID } equals new { ProductSubcategoryID = ProductSubcategory.ProductSubcategoryID } into ProductSubcategory_join
                           from ProductSubcategory in ProductSubcategory_join.DefaultIfEmpty()
