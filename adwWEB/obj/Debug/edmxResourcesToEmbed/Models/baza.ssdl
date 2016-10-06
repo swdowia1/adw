@@ -1,0 +1,411 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="adwentureModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Culture">
+    <Key>
+      <PropertyRef Name="CultureID" />
+    </Key>
+    <Property Name="CultureID" Type="nchar" MaxLength="6" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6005: The data type 'hierarchyid' is currently not supported for the target Entity Framework version; the column 'DocumentNode' in the table 'adwenture.Production.Document' was excluded.
+warning 6031: The column 'DocumentNode' on the table/view 'adwenture.Production.Document' was excluded, and is a key column.  The table/view has been excluded.  Please fix the entity in the schema file, and uncomment.
+        <EntityType Name="Document">
+          <Property Name="DocumentLevel" Type="smallint" StoreGeneratedPattern="Computed" />
+          <Property Name="Title" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Owner" Type="int" Nullable="false" />
+          <Property Name="FolderFlag" Type="bit" Nullable="false" />
+          <Property Name="FileName" Type="nvarchar" MaxLength="400" Nullable="false" />
+          <Property Name="FileExtension" Type="nvarchar" MaxLength="8" Nullable="false" />
+          <Property Name="Revision" Type="nchar" MaxLength="5" Nullable="false" />
+          <Property Name="ChangeNumber" Type="int" Nullable="false" />
+          <Property Name="Status" Type="tinyint" Nullable="false" />
+          <Property Name="DocumentSummary" Type="nvarchar(max)" />
+          <Property Name="Document" Type="varbinary(max)" />
+          <Property Name="rowguid" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+        </EntityType>-->
+  <EntityType Name="Illustration">
+    <Key>
+      <PropertyRef Name="IllustrationID" />
+    </Key>
+    <Property Name="IllustrationID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Diagram" Type="xml" />
+    <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Location">
+    <Key>
+      <PropertyRef Name="LocationID" />
+    </Key>
+    <Property Name="LocationID" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CostRate" Type="smallmoney" Nullable="false" />
+    <Property Name="Availability" Type="decimal" Precision="8" Scale="2" Nullable="false" />
+    <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="ProductID" />
+    </Key>
+    <Property Name="ProductID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ProductNumber" Type="nvarchar" MaxLength="25" Nullable="false" />
+    <Property Name="MakeFlag" Type="bit" Nullable="false" />
+    <Property Name="FinishedGoodsFlag" Type="bit" Nullable="false" />
+    <Property Name="Color" Type="nvarchar" MaxLength="15" />
+    <Property Name="SafetyStockLevel" Type="smallint" Nullable="false" />
+    <Property Name="ReorderPoint" Type="smallint" Nullable="false" />
+    <Property Name="StandardCost" Type="money" Nullable="false" />
+    <Property Name="ListPrice" Type="money" Nullable="false" />
+    <Property Name="Size" Type="nvarchar" MaxLength="5" />
+    <Property Name="SizeUnitMeasureCode" Type="nchar" MaxLength="3" />
+    <Property Name="WeightUnitMeasureCode" Type="nchar" MaxLength="3" />
+    <Property Name="Weight" Type="decimal" Precision="8" Scale="2" />
+    <Property Name="DaysToManufacture" Type="int" Nullable="false" />
+    <Property Name="ProductLine" Type="nchar" MaxLength="2" />
+    <Property Name="Class" Type="nchar" MaxLength="2" />
+    <Property Name="Style" Type="nchar" MaxLength="2" />
+    <Property Name="ProductSubcategoryID" Type="int" />
+    <Property Name="ProductModelID" Type="int" />
+    <Property Name="SellStartDate" Type="datetime" Nullable="false" />
+    <Property Name="SellEndDate" Type="datetime" />
+    <Property Name="DiscontinuedDate" Type="datetime" />
+    <Property Name="rowguid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProductCategory">
+    <Key>
+      <PropertyRef Name="ProductCategoryID" />
+    </Key>
+    <Property Name="ProductCategoryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="rowguid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'adwenture.Production.ProductCostHistory' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="ProductCostHistory">
+    <Key>
+      <PropertyRef Name="ProductID" />
+      <PropertyRef Name="StartDate" />
+      <PropertyRef Name="StandardCost" />
+      <PropertyRef Name="ModifiedDate" />
+    </Key>
+    <Property Name="ProductID" Type="int" Nullable="false" />
+    <Property Name="StartDate" Type="datetime" Nullable="false" />
+    <Property Name="EndDate" Type="datetime" />
+    <Property Name="StandardCost" Type="money" Nullable="false" />
+    <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProductDescription">
+    <Key>
+      <PropertyRef Name="ProductDescriptionID" />
+    </Key>
+    <Property Name="ProductDescriptionID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="400" Nullable="false" />
+    <Property Name="rowguid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6005: The data type 'hierarchyid' is currently not supported for the target Entity Framework version; the column 'DocumentNode' in the table 'adwenture.Production.ProductDocument' was excluded.
+warning 6002: The table/view 'adwenture.Production.ProductDocument' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="ProductDocument">
+    <Key>
+      <PropertyRef Name="ProductID" />
+      <PropertyRef Name="ModifiedDate" />
+    </Key>
+    <Property Name="ProductID" Type="int" Nullable="false" />
+    <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'adwenture.Production.ProductInventory' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="ProductInventory">
+    <Key>
+      <PropertyRef Name="ProductID" />
+      <PropertyRef Name="LocationID" />
+      <PropertyRef Name="Shelf" />
+      <PropertyRef Name="Bin" />
+      <PropertyRef Name="Quantity" />
+      <PropertyRef Name="rowguid" />
+      <PropertyRef Name="ModifiedDate" />
+    </Key>
+    <Property Name="ProductID" Type="int" Nullable="false" />
+    <Property Name="LocationID" Type="smallint" Nullable="false" />
+    <Property Name="Shelf" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="Bin" Type="tinyint" Nullable="false" />
+    <Property Name="Quantity" Type="smallint" Nullable="false" />
+    <Property Name="rowguid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'adwenture.Production.ProductListPriceHistory' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="ProductListPriceHistory">
+    <Key>
+      <PropertyRef Name="ProductID" />
+      <PropertyRef Name="StartDate" />
+      <PropertyRef Name="ListPrice" />
+      <PropertyRef Name="ModifiedDate" />
+    </Key>
+    <Property Name="ProductID" Type="int" Nullable="false" />
+    <Property Name="StartDate" Type="datetime" Nullable="false" />
+    <Property Name="EndDate" Type="datetime" />
+    <Property Name="ListPrice" Type="money" Nullable="false" />
+    <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProductModel">
+    <Key>
+      <PropertyRef Name="ProductModelID" />
+    </Key>
+    <Property Name="ProductModelID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CatalogDescription" Type="xml" />
+    <Property Name="Instructions" Type="xml" />
+    <Property Name="rowguid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProductModelIllustration">
+    <Key>
+      <PropertyRef Name="ProductModelID" />
+      <PropertyRef Name="IllustrationID" />
+    </Key>
+    <Property Name="ProductModelID" Type="int" Nullable="false" />
+    <Property Name="IllustrationID" Type="int" Nullable="false" />
+    <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProductModelProductDescriptionCulture">
+    <Key>
+      <PropertyRef Name="ProductModelID" />
+      <PropertyRef Name="ProductDescriptionID" />
+      <PropertyRef Name="CultureID" />
+    </Key>
+    <Property Name="ProductModelID" Type="int" Nullable="false" />
+    <Property Name="ProductDescriptionID" Type="int" Nullable="false" />
+    <Property Name="CultureID" Type="nchar" MaxLength="6" Nullable="false" />
+    <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProductPhoto">
+    <Key>
+      <PropertyRef Name="ProductPhotoID" />
+    </Key>
+    <Property Name="ProductPhotoID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ThumbNailPhoto" Type="varbinary(max)" />
+    <Property Name="ThumbnailPhotoFileName" Type="nvarchar" MaxLength="50" />
+    <Property Name="LargePhoto" Type="varbinary(max)" />
+    <Property Name="LargePhotoFileName" Type="nvarchar" MaxLength="50" />
+    <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProductProductPhoto">
+    <Key>
+      <PropertyRef Name="ProductID" />
+      <PropertyRef Name="ProductPhotoID" />
+    </Key>
+    <Property Name="ProductID" Type="int" Nullable="false" />
+    <Property Name="ProductPhotoID" Type="int" Nullable="false" />
+    <Property Name="Primary" Type="bit" Nullable="false" />
+    <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProductReview">
+    <Key>
+      <PropertyRef Name="ProductReviewID" />
+    </Key>
+    <Property Name="ProductReviewID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProductID" Type="int" Nullable="false" />
+    <Property Name="ReviewerName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ReviewDate" Type="datetime" Nullable="false" />
+    <Property Name="EmailAddress" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Rating" Type="int" Nullable="false" />
+    <Property Name="Comments" Type="nvarchar" MaxLength="3850" />
+    <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProductSubcategory">
+    <Key>
+      <PropertyRef Name="ProductSubcategoryID" />
+    </Key>
+    <Property Name="ProductSubcategoryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProductCategoryID" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="rowguid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ScrapReason">
+    <Key>
+      <PropertyRef Name="ScrapReasonID" />
+    </Key>
+    <Property Name="ScrapReasonID" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UnitMeasure">
+    <Key>
+      <PropertyRef Name="UnitMeasureCode" />
+    </Key>
+    <Property Name="UnitMeasureCode" Type="nchar" MaxLength="3" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_ProductModelIllustration_Illustration_IllustrationID">
+    <End Role="Illustration" Type="Self.Illustration" Multiplicity="1" />
+    <End Role="ProductModelIllustration" Type="Self.ProductModelIllustration" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Illustration">
+        <PropertyRef Name="IllustrationID" />
+      </Principal>
+      <Dependent Role="ProductModelIllustration">
+        <PropertyRef Name="IllustrationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductModelIllustration_ProductModel_ProductModelID">
+    <End Role="ProductModel" Type="Self.ProductModel" Multiplicity="1" />
+    <End Role="ProductModelIllustration" Type="Self.ProductModelIllustration" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductModel">
+        <PropertyRef Name="ProductModelID" />
+      </Principal>
+      <Dependent Role="ProductModelIllustration">
+        <PropertyRef Name="ProductModelID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductModelProductDescriptionCulture_Culture_CultureID">
+    <End Role="Culture" Type="Self.Culture" Multiplicity="1" />
+    <End Role="ProductModelProductDescriptionCulture" Type="Self.ProductModelProductDescriptionCulture" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Culture">
+        <PropertyRef Name="CultureID" />
+      </Principal>
+      <Dependent Role="ProductModelProductDescriptionCulture">
+        <PropertyRef Name="CultureID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductModelProductDescriptionCulture_ProductDescription_ProductDescriptionID">
+    <End Role="ProductDescription" Type="Self.ProductDescription" Multiplicity="1" />
+    <End Role="ProductModelProductDescriptionCulture" Type="Self.ProductModelProductDescriptionCulture" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductDescription">
+        <PropertyRef Name="ProductDescriptionID" />
+      </Principal>
+      <Dependent Role="ProductModelProductDescriptionCulture">
+        <PropertyRef Name="ProductDescriptionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductModelProductDescriptionCulture_ProductModel_ProductModelID">
+    <End Role="ProductModel" Type="Self.ProductModel" Multiplicity="1" />
+    <End Role="ProductModelProductDescriptionCulture" Type="Self.ProductModelProductDescriptionCulture" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductModel">
+        <PropertyRef Name="ProductModelID" />
+      </Principal>
+      <Dependent Role="ProductModelProductDescriptionCulture">
+        <PropertyRef Name="ProductModelID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductProductPhoto_Product_ProductID">
+    <End Role="Product" Type="Self.Product" Multiplicity="1" />
+    <End Role="ProductProductPhoto" Type="Self.ProductProductPhoto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="ProductID" />
+      </Principal>
+      <Dependent Role="ProductProductPhoto">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductProductPhoto_ProductPhoto_ProductPhotoID">
+    <End Role="ProductPhoto" Type="Self.ProductPhoto" Multiplicity="1" />
+    <End Role="ProductProductPhoto" Type="Self.ProductProductPhoto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductPhoto">
+        <PropertyRef Name="ProductPhotoID" />
+      </Principal>
+      <Dependent Role="ProductProductPhoto">
+        <PropertyRef Name="ProductPhotoID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="adwentureModelStoreContainer">
+    <EntitySet Name="Culture" EntityType="Self.Culture" Schema="Production" store:Type="Tables" />
+    <EntitySet Name="Illustration" EntityType="Self.Illustration" Schema="Production" store:Type="Tables" />
+    <EntitySet Name="Location" EntityType="Self.Location" Schema="Production" store:Type="Tables" />
+    <EntitySet Name="Product" EntityType="Self.Product" Schema="Production" store:Type="Tables" />
+    <EntitySet Name="ProductCategory" EntityType="Self.ProductCategory" Schema="Production" store:Type="Tables" />
+    <EntitySet Name="ProductDescription" EntityType="Self.ProductDescription" Schema="Production" store:Type="Tables" />
+    <EntitySet Name="ProductModel" EntityType="Self.ProductModel" Schema="Production" store:Type="Tables" />
+    <EntitySet Name="ProductModelIllustration" EntityType="Self.ProductModelIllustration" Schema="Production" store:Type="Tables" />
+    <EntitySet Name="ProductModelProductDescriptionCulture" EntityType="Self.ProductModelProductDescriptionCulture" Schema="Production" store:Type="Tables" />
+    <EntitySet Name="ProductPhoto" EntityType="Self.ProductPhoto" Schema="Production" store:Type="Tables" />
+    <EntitySet Name="ProductProductPhoto" EntityType="Self.ProductProductPhoto" Schema="Production" store:Type="Tables" />
+    <EntitySet Name="ProductReview" EntityType="Self.ProductReview" Schema="Production" store:Type="Tables" />
+    <EntitySet Name="ProductSubcategory" EntityType="Self.ProductSubcategory" Schema="Production" store:Type="Tables" />
+    <EntitySet Name="ScrapReason" EntityType="Self.ScrapReason" Schema="Production" store:Type="Tables" />
+    <EntitySet Name="UnitMeasure" EntityType="Self.UnitMeasure" Schema="Production" store:Type="Tables" />
+    <EntitySet Name="ProductCostHistory" EntityType="Self.ProductCostHistory" store:Type="Tables" store:Schema="Production">
+      <DefiningQuery>SELECT 
+    [ProductCostHistory].[ProductID] AS [ProductID], 
+    [ProductCostHistory].[StartDate] AS [StartDate], 
+    [ProductCostHistory].[EndDate] AS [EndDate], 
+    [ProductCostHistory].[StandardCost] AS [StandardCost], 
+    [ProductCostHistory].[ModifiedDate] AS [ModifiedDate]
+    FROM [Production].[ProductCostHistory] AS [ProductCostHistory]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="ProductDocument" EntityType="Self.ProductDocument" store:Type="Tables" store:Schema="Production">
+      <DefiningQuery>SELECT 
+    [ProductDocument].[ProductID] AS [ProductID], 
+    [ProductDocument].[ModifiedDate] AS [ModifiedDate]
+    FROM [Production].[ProductDocument] AS [ProductDocument]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="ProductInventory" EntityType="Self.ProductInventory" store:Type="Tables" store:Schema="Production">
+      <DefiningQuery>SELECT 
+    [ProductInventory].[ProductID] AS [ProductID], 
+    [ProductInventory].[LocationID] AS [LocationID], 
+    [ProductInventory].[Shelf] AS [Shelf], 
+    [ProductInventory].[Bin] AS [Bin], 
+    [ProductInventory].[Quantity] AS [Quantity], 
+    [ProductInventory].[rowguid] AS [rowguid], 
+    [ProductInventory].[ModifiedDate] AS [ModifiedDate]
+    FROM [Production].[ProductInventory] AS [ProductInventory]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="ProductListPriceHistory" EntityType="Self.ProductListPriceHistory" store:Type="Tables" store:Schema="Production">
+      <DefiningQuery>SELECT 
+    [ProductListPriceHistory].[ProductID] AS [ProductID], 
+    [ProductListPriceHistory].[StartDate] AS [StartDate], 
+    [ProductListPriceHistory].[EndDate] AS [EndDate], 
+    [ProductListPriceHistory].[ListPrice] AS [ListPrice], 
+    [ProductListPriceHistory].[ModifiedDate] AS [ModifiedDate]
+    FROM [Production].[ProductListPriceHistory] AS [ProductListPriceHistory]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_ProductModelIllustration_Illustration_IllustrationID" Association="Self.FK_ProductModelIllustration_Illustration_IllustrationID">
+      <End Role="Illustration" EntitySet="Illustration" />
+      <End Role="ProductModelIllustration" EntitySet="ProductModelIllustration" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductModelIllustration_ProductModel_ProductModelID" Association="Self.FK_ProductModelIllustration_ProductModel_ProductModelID">
+      <End Role="ProductModel" EntitySet="ProductModel" />
+      <End Role="ProductModelIllustration" EntitySet="ProductModelIllustration" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductModelProductDescriptionCulture_Culture_CultureID" Association="Self.FK_ProductModelProductDescriptionCulture_Culture_CultureID">
+      <End Role="Culture" EntitySet="Culture" />
+      <End Role="ProductModelProductDescriptionCulture" EntitySet="ProductModelProductDescriptionCulture" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductModelProductDescriptionCulture_ProductDescription_ProductDescriptionID" Association="Self.FK_ProductModelProductDescriptionCulture_ProductDescription_ProductDescriptionID">
+      <End Role="ProductDescription" EntitySet="ProductDescription" />
+      <End Role="ProductModelProductDescriptionCulture" EntitySet="ProductModelProductDescriptionCulture" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductModelProductDescriptionCulture_ProductModel_ProductModelID" Association="Self.FK_ProductModelProductDescriptionCulture_ProductModel_ProductModelID">
+      <End Role="ProductModel" EntitySet="ProductModel" />
+      <End Role="ProductModelProductDescriptionCulture" EntitySet="ProductModelProductDescriptionCulture" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductProductPhoto_Product_ProductID" Association="Self.FK_ProductProductPhoto_Product_ProductID">
+      <End Role="Product" EntitySet="Product" />
+      <End Role="ProductProductPhoto" EntitySet="ProductProductPhoto" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductProductPhoto_ProductPhoto_ProductPhotoID" Association="Self.FK_ProductProductPhoto_ProductPhoto_ProductPhotoID">
+      <End Role="ProductPhoto" EntitySet="ProductPhoto" />
+      <End Role="ProductProductPhoto" EntitySet="ProductProductPhoto" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,233 @@
+C:\dysk_d\projekty\adwWEB\adwWEB\bin\roslyn\csc.exe
+C:\dysk_d\projekty\adwWEB\adwWEB\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\dysk_d\projekty\adwWEB\adwWEB\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\dysk_d\projekty\adwWEB\adwWEB\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\dysk_d\projekty\adwWEB\adwWEB\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\dysk_d\projekty\adwWEB\adwWEB\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\dysk_d\projekty\adwWEB\adwWEB\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\dysk_d\projekty\adwWEB\adwWEB\bin\roslyn\System.Collections.Immutable.dll
+C:\dysk_d\projekty\adwWEB\adwWEB\bin\roslyn\System.Reflection.Metadata.dll
+C:\dysk_d\projekty\adwWEB\adwWEB\bin\roslyn\vbc.exe
+C:\dysk_d\projekty\adwWEB\adwWEB\bin\roslyn\VBCSCompiler.exe
+C:\dysk_d\projekty\adwWEB\adwWEB\bin\roslyn\VBCSCompiler.exe.config
+C:\dysk_d\projekty\adwWEB\adwWEB\bin\adwWEB.dll.config
+C:\dysk_d\projekty\adwWEB\adwWEB\bin\adwWEB.dll
+C:\dysk_d\projekty\adwWEB\adwWEB\bin\adwWEB.pdb
+C:\dysk_d\projekty\adwWEB\adwWEB\bin\Antlr3.Runtime.dll
+C:\dysk_d\projekty\adwWEB\adwWEB\bin\EntityFramework.dll
+C:\dysk_d\projekty\adwWEB\adwWEB\bin\EntityFramework.SqlServer.dll
+C:\dysk_d\projekty\adwWEB\adwWEB\bin\Microsoft.AspNet.Identity.Core.dll
+C:\dysk_d\projekty\adwWEB\adwWEB\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\dysk_d\projekty\adwWEB\adwWEB\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\dysk_d\projekty\adwWEB\adwWEB\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\dysk_d\projekty\adwWEB\adwWEB\bin\Microsoft.Owin.dll
+C:\dysk_d\projekty\adwWEB\adwWEB\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\dysk_d\projekty\adwWEB\adwWEB\bin\Microsoft.Owin.Security.Cookies.dll
+C:\dysk_d\projekty\adwWEB\adwWEB\bin\Microsoft.Owin.Security.dll
+C:\dysk_d\projekty\adwWEB\adwWEB\bin\Microsoft.Owin.Security.Facebook.dll
+C:\dysk_d\projekty\adwWEB\adwWEB\bin\Microsoft.Owin.Security.Google.dll
+C:\dysk_d\projekty\adwWEB\adwWEB\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\dysk_d\projekty\adwWEB\adwWEB\bin\Microsoft.Owin.Security.OAuth.dll
+C:\dysk_d\projekty\adwWEB\adwWEB\bin\Microsoft.Owin.Security.Twitter.dll
+C:\dysk_d\projekty\adwWEB\adwWEB\bin\Microsoft.Web.Infrastructure.dll
+C:\dysk_d\projekty\adwWEB\adwWEB\bin\Newtonsoft.Json.dll
+C:\dysk_d\projekty\adwWEB\adwWEB\bin\Owin.dll
+C:\dysk_d\projekty\adwWEB\adwWEB\bin\System.Net.Http.Formatting.dll
+C:\dysk_d\projekty\adwWEB\adwWEB\bin\System.Web.Helpers.dll
+C:\dysk_d\projekty\adwWEB\adwWEB\bin\System.Web.Http.dll
+C:\dysk_d\projekty\adwWEB\adwWEB\bin\System.Web.Http.WebHost.dll
+C:\dysk_d\projekty\adwWEB\adwWEB\bin\System.Web.Mvc.dll
+C:\dysk_d\projekty\adwWEB\adwWEB\bin\System.Web.Optimization.dll
+C:\dysk_d\projekty\adwWEB\adwWEB\bin\System.Web.Razor.dll
+C:\dysk_d\projekty\adwWEB\adwWEB\bin\System.Web.WebPages.Deployment.dll
+C:\dysk_d\projekty\adwWEB\adwWEB\bin\System.Web.WebPages.dll
+C:\dysk_d\projekty\adwWEB\adwWEB\bin\System.Web.WebPages.Razor.dll
+C:\dysk_d\projekty\adwWEB\adwWEB\bin\WebGrease.dll
+C:\dysk_d\projekty\adwWEB\adwWEB\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\dysk_d\projekty\adwWEB\adwWEB\bin\System.Web.Helpers.xml
+C:\dysk_d\projekty\adwWEB\adwWEB\bin\System.Web.Mvc.xml
+C:\dysk_d\projekty\adwWEB\adwWEB\bin\System.Web.Optimization.xml
+C:\dysk_d\projekty\adwWEB\adwWEB\bin\System.Web.Razor.xml
+C:\dysk_d\projekty\adwWEB\adwWEB\bin\System.Web.WebPages.xml
+C:\dysk_d\projekty\adwWEB\adwWEB\bin\System.Web.WebPages.Deployment.xml
+C:\dysk_d\projekty\adwWEB\adwWEB\bin\System.Web.WebPages.Razor.xml
+C:\dysk_d\projekty\adwWEB\adwWEB\bin\Antlr3.Runtime.pdb
+C:\dysk_d\projekty\adwWEB\adwWEB\bin\Newtonsoft.Json.xml
+C:\dysk_d\projekty\adwWEB\adwWEB\bin\System.Net.Http.Formatting.xml
+C:\dysk_d\projekty\adwWEB\adwWEB\bin\System.Web.Http.xml
+C:\dysk_d\projekty\adwWEB\adwWEB\bin\System.Web.Http.WebHost.xml
+C:\dysk_d\projekty\adwWEB\adwWEB\bin\EntityFramework.xml
+C:\dysk_d\projekty\adwWEB\adwWEB\bin\EntityFramework.SqlServer.xml
+C:\dysk_d\projekty\adwWEB\adwWEB\bin\Microsoft.AspNet.Identity.Core.xml
+C:\dysk_d\projekty\adwWEB\adwWEB\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\dysk_d\projekty\adwWEB\adwWEB\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\dysk_d\projekty\adwWEB\adwWEB\bin\Microsoft.Owin.xml
+C:\dysk_d\projekty\adwWEB\adwWEB\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\dysk_d\projekty\adwWEB\adwWEB\bin\Microsoft.Owin.Security.xml
+C:\dysk_d\projekty\adwWEB\adwWEB\bin\Microsoft.Owin.Security.Facebook.xml
+C:\dysk_d\projekty\adwWEB\adwWEB\bin\Microsoft.Owin.Security.Cookies.xml
+C:\dysk_d\projekty\adwWEB\adwWEB\bin\Microsoft.Owin.Security.OAuth.xml
+C:\dysk_d\projekty\adwWEB\adwWEB\bin\Microsoft.Owin.Security.Google.xml
+C:\dysk_d\projekty\adwWEB\adwWEB\bin\Microsoft.Owin.Security.Twitter.xml
+C:\dysk_d\projekty\adwWEB\adwWEB\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\dysk_d\projekty\adwWEB\adwWEB\obj\Debug\adwWEB.dll
+C:\dysk_d\projekty\adwWEB\adwWEB\obj\Debug\adwWEB.pdb
+C:\dysk_d\projekty\adwWEB\adwWEB\obj\Debug\adwWEB.csprojResolveAssemblyReference.cache
+C:\dysk_d\projekty\adwWEBgit\adwWEB\bin\roslyn\csc.exe
+C:\dysk_d\projekty\adwWEBgit\adwWEB\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\dysk_d\projekty\adwWEBgit\adwWEB\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\dysk_d\projekty\adwWEBgit\adwWEB\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\dysk_d\projekty\adwWEBgit\adwWEB\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\dysk_d\projekty\adwWEBgit\adwWEB\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\dysk_d\projekty\adwWEBgit\adwWEB\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\dysk_d\projekty\adwWEBgit\adwWEB\bin\roslyn\System.Collections.Immutable.dll
+C:\dysk_d\projekty\adwWEBgit\adwWEB\bin\roslyn\System.Reflection.Metadata.dll
+C:\dysk_d\projekty\adwWEBgit\adwWEB\bin\roslyn\vbc.exe
+C:\dysk_d\projekty\adwWEBgit\adwWEB\bin\roslyn\VBCSCompiler.exe
+C:\dysk_d\projekty\adwWEBgit\adwWEB\bin\roslyn\VBCSCompiler.exe.config
+C:\dysk_d\projekty\adwWEBgit\adwWEB\bin\adwWEB.dll.config
+C:\dysk_d\projekty\adwWEBgit\adwWEB\bin\adwWEB.dll
+C:\dysk_d\projekty\adwWEBgit\adwWEB\bin\adwWEB.pdb
+C:\dysk_d\projekty\adwWEBgit\adwWEB\bin\Antlr3.Runtime.dll
+C:\dysk_d\projekty\adwWEBgit\adwWEB\bin\EntityFramework.dll
+C:\dysk_d\projekty\adwWEBgit\adwWEB\bin\EntityFramework.SqlServer.dll
+C:\dysk_d\projekty\adwWEBgit\adwWEB\bin\Microsoft.AspNet.Identity.Core.dll
+C:\dysk_d\projekty\adwWEBgit\adwWEB\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\dysk_d\projekty\adwWEBgit\adwWEB\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\dysk_d\projekty\adwWEBgit\adwWEB\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\dysk_d\projekty\adwWEBgit\adwWEB\bin\Microsoft.Owin.dll
+C:\dysk_d\projekty\adwWEBgit\adwWEB\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\dysk_d\projekty\adwWEBgit\adwWEB\bin\Microsoft.Owin.Security.Cookies.dll
+C:\dysk_d\projekty\adwWEBgit\adwWEB\bin\Microsoft.Owin.Security.dll
+C:\dysk_d\projekty\adwWEBgit\adwWEB\bin\Microsoft.Owin.Security.Facebook.dll
+C:\dysk_d\projekty\adwWEBgit\adwWEB\bin\Microsoft.Owin.Security.Google.dll
+C:\dysk_d\projekty\adwWEBgit\adwWEB\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\dysk_d\projekty\adwWEBgit\adwWEB\bin\Microsoft.Owin.Security.OAuth.dll
+C:\dysk_d\projekty\adwWEBgit\adwWEB\bin\Microsoft.Owin.Security.Twitter.dll
+C:\dysk_d\projekty\adwWEBgit\adwWEB\bin\Microsoft.Web.Infrastructure.dll
+C:\dysk_d\projekty\adwWEBgit\adwWEB\bin\Newtonsoft.Json.dll
+C:\dysk_d\projekty\adwWEBgit\adwWEB\bin\Owin.dll
+C:\dysk_d\projekty\adwWEBgit\adwWEB\bin\PagedList.dll
+C:\dysk_d\projekty\adwWEBgit\adwWEB\bin\PagedList.Mvc.dll
+C:\dysk_d\projekty\adwWEBgit\adwWEB\bin\System.Net.Http.Formatting.dll
+C:\dysk_d\projekty\adwWEBgit\adwWEB\bin\System.Web.Helpers.dll
+C:\dysk_d\projekty\adwWEBgit\adwWEB\bin\System.Web.Http.dll
+C:\dysk_d\projekty\adwWEBgit\adwWEB\bin\System.Web.Http.WebHost.dll
+C:\dysk_d\projekty\adwWEBgit\adwWEB\bin\System.Web.Mvc.dll
+C:\dysk_d\projekty\adwWEBgit\adwWEB\bin\System.Web.Optimization.dll
+C:\dysk_d\projekty\adwWEBgit\adwWEB\bin\System.Web.Razor.dll
+C:\dysk_d\projekty\adwWEBgit\adwWEB\bin\System.Web.WebPages.Deployment.dll
+C:\dysk_d\projekty\adwWEBgit\adwWEB\bin\System.Web.WebPages.dll
+C:\dysk_d\projekty\adwWEBgit\adwWEB\bin\System.Web.WebPages.Razor.dll
+C:\dysk_d\projekty\adwWEBgit\adwWEB\bin\WebGrease.dll
+C:\dysk_d\projekty\adwWEBgit\adwWEB\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\dysk_d\projekty\adwWEBgit\adwWEB\bin\PagedList.xml
+C:\dysk_d\projekty\adwWEBgit\adwWEB\bin\PagedList.Mvc.xml
+C:\dysk_d\projekty\adwWEBgit\adwWEB\bin\System.Web.Helpers.xml
+C:\dysk_d\projekty\adwWEBgit\adwWEB\bin\System.Web.Mvc.xml
+C:\dysk_d\projekty\adwWEBgit\adwWEB\bin\System.Web.Optimization.xml
+C:\dysk_d\projekty\adwWEBgit\adwWEB\bin\System.Web.Razor.xml
+C:\dysk_d\projekty\adwWEBgit\adwWEB\bin\System.Web.WebPages.xml
+C:\dysk_d\projekty\adwWEBgit\adwWEB\bin\System.Web.WebPages.Deployment.xml
+C:\dysk_d\projekty\adwWEBgit\adwWEB\bin\System.Web.WebPages.Razor.xml
+C:\dysk_d\projekty\adwWEBgit\adwWEB\bin\Antlr3.Runtime.pdb
+C:\dysk_d\projekty\adwWEBgit\adwWEB\bin\Newtonsoft.Json.xml
+C:\dysk_d\projekty\adwWEBgit\adwWEB\bin\System.Net.Http.Formatting.xml
+C:\dysk_d\projekty\adwWEBgit\adwWEB\bin\System.Web.Http.xml
+C:\dysk_d\projekty\adwWEBgit\adwWEB\bin\System.Web.Http.WebHost.xml
+C:\dysk_d\projekty\adwWEBgit\adwWEB\bin\EntityFramework.xml
+C:\dysk_d\projekty\adwWEBgit\adwWEB\bin\EntityFramework.SqlServer.xml
+C:\dysk_d\projekty\adwWEBgit\adwWEB\bin\Microsoft.AspNet.Identity.Core.xml
+C:\dysk_d\projekty\adwWEBgit\adwWEB\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\dysk_d\projekty\adwWEBgit\adwWEB\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\dysk_d\projekty\adwWEBgit\adwWEB\bin\Microsoft.Owin.xml
+C:\dysk_d\projekty\adwWEBgit\adwWEB\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\dysk_d\projekty\adwWEBgit\adwWEB\bin\Microsoft.Owin.Security.xml
+C:\dysk_d\projekty\adwWEBgit\adwWEB\bin\Microsoft.Owin.Security.Facebook.xml
+C:\dysk_d\projekty\adwWEBgit\adwWEB\bin\Microsoft.Owin.Security.Cookies.xml
+C:\dysk_d\projekty\adwWEBgit\adwWEB\bin\Microsoft.Owin.Security.OAuth.xml
+C:\dysk_d\projekty\adwWEBgit\adwWEB\bin\Microsoft.Owin.Security.Google.xml
+C:\dysk_d\projekty\adwWEBgit\adwWEB\bin\Microsoft.Owin.Security.Twitter.xml
+C:\dysk_d\projekty\adwWEBgit\adwWEB\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\dysk_d\projekty\adwWEBgit\adwWEB\obj\Debug\adwWEB.csprojResolveAssemblyReference.cache
+C:\dysk_d\projekty\adwWEBgit\adwWEB\obj\Debug\adwWEB.dll
+C:\dysk_d\projekty\adwWEBgit\adwWEB\obj\Debug\adwWEB.pdb
+C:\dysk_d\projekty\adwWEBgit — kopia\adwWEB\bin\roslyn\csc.exe
+C:\dysk_d\projekty\adwWEBgit — kopia\adwWEB\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\dysk_d\projekty\adwWEBgit — kopia\adwWEB\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\dysk_d\projekty\adwWEBgit — kopia\adwWEB\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\dysk_d\projekty\adwWEBgit — kopia\adwWEB\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\dysk_d\projekty\adwWEBgit — kopia\adwWEB\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\dysk_d\projekty\adwWEBgit — kopia\adwWEB\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\dysk_d\projekty\adwWEBgit — kopia\adwWEB\bin\roslyn\System.Collections.Immutable.dll
+C:\dysk_d\projekty\adwWEBgit — kopia\adwWEB\bin\roslyn\System.Reflection.Metadata.dll
+C:\dysk_d\projekty\adwWEBgit — kopia\adwWEB\bin\roslyn\vbc.exe
+C:\dysk_d\projekty\adwWEBgit — kopia\adwWEB\bin\roslyn\VBCSCompiler.exe
+C:\dysk_d\projekty\adwWEBgit — kopia\adwWEB\bin\roslyn\VBCSCompiler.exe.config
+C:\dysk_d\projekty\adwWEBgit — kopia\adwWEB\bin\adwWEB.dll.config
+C:\dysk_d\projekty\adwWEBgit — kopia\adwWEB\bin\adwWEB.dll
+C:\dysk_d\projekty\adwWEBgit — kopia\adwWEB\bin\adwWEB.pdb
+C:\dysk_d\projekty\adwWEBgit — kopia\adwWEB\bin\Antlr3.Runtime.dll
+C:\dysk_d\projekty\adwWEBgit — kopia\adwWEB\bin\EntityFramework.dll
+C:\dysk_d\projekty\adwWEBgit — kopia\adwWEB\bin\EntityFramework.SqlServer.dll
+C:\dysk_d\projekty\adwWEBgit — kopia\adwWEB\bin\Microsoft.AspNet.Identity.Core.dll
+C:\dysk_d\projekty\adwWEBgit — kopia\adwWEB\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\dysk_d\projekty\adwWEBgit — kopia\adwWEB\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\dysk_d\projekty\adwWEBgit — kopia\adwWEB\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\dysk_d\projekty\adwWEBgit — kopia\adwWEB\bin\Microsoft.Owin.dll
+C:\dysk_d\projekty\adwWEBgit — kopia\adwWEB\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\dysk_d\projekty\adwWEBgit — kopia\adwWEB\bin\Microsoft.Owin.Security.Cookies.dll
+C:\dysk_d\projekty\adwWEBgit — kopia\adwWEB\bin\Microsoft.Owin.Security.dll
+C:\dysk_d\projekty\adwWEBgit — kopia\adwWEB\bin\Microsoft.Owin.Security.Facebook.dll
+C:\dysk_d\projekty\adwWEBgit — kopia\adwWEB\bin\Microsoft.Owin.Security.Google.dll
+C:\dysk_d\projekty\adwWEBgit — kopia\adwWEB\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\dysk_d\projekty\adwWEBgit — kopia\adwWEB\bin\Microsoft.Owin.Security.OAuth.dll
+C:\dysk_d\projekty\adwWEBgit — kopia\adwWEB\bin\Microsoft.Owin.Security.Twitter.dll
+C:\dysk_d\projekty\adwWEBgit — kopia\adwWEB\bin\Microsoft.Web.Infrastructure.dll
+C:\dysk_d\projekty\adwWEBgit — kopia\adwWEB\bin\Newtonsoft.Json.dll
+C:\dysk_d\projekty\adwWEBgit — kopia\adwWEB\bin\Owin.dll
+C:\dysk_d\projekty\adwWEBgit — kopia\adwWEB\bin\PagedList.dll
+C:\dysk_d\projekty\adwWEBgit — kopia\adwWEB\bin\PagedList.Mvc.dll
+C:\dysk_d\projekty\adwWEBgit — kopia\adwWEB\bin\System.Net.Http.Formatting.dll
+C:\dysk_d\projekty\adwWEBgit — kopia\adwWEB\bin\System.Web.Helpers.dll
+C:\dysk_d\projekty\adwWEBgit — kopia\adwWEB\bin\System.Web.Http.dll
+C:\dysk_d\projekty\adwWEBgit — kopia\adwWEB\bin\System.Web.Http.WebHost.dll
+C:\dysk_d\projekty\adwWEBgit — kopia\adwWEB\bin\System.Web.Mvc.dll
+C:\dysk_d\projekty\adwWEBgit — kopia\adwWEB\bin\System.Web.Optimization.dll
+C:\dysk_d\projekty\adwWEBgit — kopia\adwWEB\bin\System.Web.Razor.dll
+C:\dysk_d\projekty\adwWEBgit — kopia\adwWEB\bin\System.Web.WebPages.Deployment.dll
+C:\dysk_d\projekty\adwWEBgit — kopia\adwWEB\bin\System.Web.WebPages.dll
+C:\dysk_d\projekty\adwWEBgit — kopia\adwWEB\bin\System.Web.WebPages.Razor.dll
+C:\dysk_d\projekty\adwWEBgit — kopia\adwWEB\bin\WebGrease.dll
+C:\dysk_d\projekty\adwWEBgit — kopia\adwWEB\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\dysk_d\projekty\adwWEBgit — kopia\adwWEB\bin\PagedList.xml
+C:\dysk_d\projekty\adwWEBgit — kopia\adwWEB\bin\PagedList.Mvc.xml
+C:\dysk_d\projekty\adwWEBgit — kopia\adwWEB\bin\System.Web.Helpers.xml
+C:\dysk_d\projekty\adwWEBgit — kopia\adwWEB\bin\System.Web.Mvc.xml
+C:\dysk_d\projekty\adwWEBgit — kopia\adwWEB\bin\System.Web.Optimization.xml
+C:\dysk_d\projekty\adwWEBgit — kopia\adwWEB\bin\System.Web.Razor.xml
+C:\dysk_d\projekty\adwWEBgit — kopia\adwWEB\bin\System.Web.WebPages.xml
+C:\dysk_d\projekty\adwWEBgit — kopia\adwWEB\bin\System.Web.WebPages.Deployment.xml
+C:\dysk_d\projekty\adwWEBgit — kopia\adwWEB\bin\System.Web.WebPages.Razor.xml
+C:\dysk_d\projekty\adwWEBgit — kopia\adwWEB\bin\Antlr3.Runtime.pdb
+C:\dysk_d\projekty\adwWEBgit — kopia\adwWEB\bin\Newtonsoft.Json.xml
+C:\dysk_d\projekty\adwWEBgit — kopia\adwWEB\bin\System.Net.Http.Formatting.xml
+C:\dysk_d\projekty\adwWEBgit — kopia\adwWEB\bin\System.Web.Http.xml
+C:\dysk_d\projekty\adwWEBgit — kopia\adwWEB\bin\System.Web.Http.WebHost.xml
+C:\dysk_d\projekty\adwWEBgit — kopia\adwWEB\bin\EntityFramework.xml
+C:\dysk_d\projekty\adwWEBgit — kopia\adwWEB\bin\EntityFramework.SqlServer.xml
+C:\dysk_d\projekty\adwWEBgit — kopia\adwWEB\bin\Microsoft.AspNet.Identity.Core.xml
+C:\dysk_d\projekty\adwWEBgit — kopia\adwWEB\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\dysk_d\projekty\adwWEBgit — kopia\adwWEB\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\dysk_d\projekty\adwWEBgit — kopia\adwWEB\bin\Microsoft.Owin.xml
+C:\dysk_d\projekty\adwWEBgit — kopia\adwWEB\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\dysk_d\projekty\adwWEBgit — kopia\adwWEB\bin\Microsoft.Owin.Security.xml
+C:\dysk_d\projekty\adwWEBgit — kopia\adwWEB\bin\Microsoft.Owin.Security.Facebook.xml
+C:\dysk_d\projekty\adwWEBgit — kopia\adwWEB\bin\Microsoft.Owin.Security.Cookies.xml
+C:\dysk_d\projekty\adwWEBgit — kopia\adwWEB\bin\Microsoft.Owin.Security.OAuth.xml
+C:\dysk_d\projekty\adwWEBgit — kopia\adwWEB\bin\Microsoft.Owin.Security.Google.xml
+C:\dysk_d\projekty\adwWEBgit — kopia\adwWEB\bin\Microsoft.Owin.Security.Twitter.xml
+C:\dysk_d\projekty\adwWEBgit — kopia\adwWEB\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\dysk_d\projekty\adwWEBgit — kopia\adwWEB\obj\Debug\adwWEB.csprojResolveAssemblyReference.cache
+C:\dysk_d\projekty\adwWEBgit — kopia\adwWEB\obj\Debug\adwWEB.dll
+C:\dysk_d\projekty\adwWEBgit — kopia\adwWEB\obj\Debug\adwWEB.pdb

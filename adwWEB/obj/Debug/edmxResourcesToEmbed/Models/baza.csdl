@@ -1,0 +1,367 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="adwentureModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Culture">
+    <Key>
+      <PropertyRef Name="CultureID" />
+    </Key>
+    <Property Name="CultureID" Type="String" MaxLength="6" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="ProductModelProductDescriptionCulture" Relationship="Self.FK_ProductModelProductDescriptionCulture_Culture_CultureID" FromRole="Culture" ToRole="ProductModelProductDescriptionCulture" />
+  </EntityType>
+  <EntityType Name="Illustration">
+    <Key>
+      <PropertyRef Name="IllustrationID" />
+    </Key>
+    <Property Name="IllustrationID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Diagram" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="ProductModelIllustration" Relationship="Self.FK_ProductModelIllustration_Illustration_IllustrationID" FromRole="Illustration" ToRole="ProductModelIllustration" />
+  </EntityType>
+  <EntityType Name="Location">
+    <Key>
+      <PropertyRef Name="LocationID" />
+    </Key>
+    <Property Name="LocationID" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CostRate" Type="Decimal" Precision="10" Scale="4" Nullable="false" />
+    <Property Name="Availability" Type="Decimal" Precision="8" Scale="2" Nullable="false" />
+    <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="ProductID" />
+    </Key>
+    <Property Name="ProductID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ProductNumber" Type="String" MaxLength="25" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MakeFlag" Type="Boolean" Nullable="false" />
+    <Property Name="FinishedGoodsFlag" Type="Boolean" Nullable="false" />
+    <Property Name="Color" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="SafetyStockLevel" Type="Int16" Nullable="false" />
+    <Property Name="ReorderPoint" Type="Int16" Nullable="false" />
+    <Property Name="StandardCost" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="ListPrice" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="Size" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="SizeUnitMeasureCode" Type="String" MaxLength="3" FixedLength="true" Unicode="true" />
+    <Property Name="WeightUnitMeasureCode" Type="String" MaxLength="3" FixedLength="true" Unicode="true" />
+    <Property Name="Weight" Type="Decimal" Precision="8" Scale="2" />
+    <Property Name="DaysToManufacture" Type="Int32" Nullable="false" />
+    <Property Name="ProductLine" Type="String" MaxLength="2" FixedLength="true" Unicode="true" />
+    <Property Name="Class" Type="String" MaxLength="2" FixedLength="true" Unicode="true" />
+    <Property Name="Style" Type="String" MaxLength="2" FixedLength="true" Unicode="true" />
+    <Property Name="ProductSubcategoryID" Type="Int32" />
+    <Property Name="ProductModelID" Type="Int32" />
+    <Property Name="SellStartDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="SellEndDate" Type="DateTime" Precision="3" />
+    <Property Name="DiscontinuedDate" Type="DateTime" Precision="3" />
+    <Property Name="rowguid" Type="Guid" Nullable="false" />
+    <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="ProductProductPhoto" Relationship="Self.FK_ProductProductPhoto_Product_ProductID" FromRole="Product" ToRole="ProductProductPhoto" />
+  </EntityType>
+  <EntityType Name="ProductCategory">
+    <Key>
+      <PropertyRef Name="ProductCategoryID" />
+    </Key>
+    <Property Name="ProductCategoryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="rowguid" Type="Guid" Nullable="false" />
+    <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="ProductDescription">
+    <Key>
+      <PropertyRef Name="ProductDescriptionID" />
+    </Key>
+    <Property Name="ProductDescriptionID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="String" MaxLength="400" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="rowguid" Type="Guid" Nullable="false" />
+    <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="ProductModelProductDescriptionCulture" Relationship="Self.FK_ProductModelProductDescriptionCulture_ProductDescription_ProductDescriptionID" FromRole="ProductDescription" ToRole="ProductModelProductDescriptionCulture" />
+  </EntityType>
+  <EntityType Name="ProductModel">
+    <Key>
+      <PropertyRef Name="ProductModelID" />
+    </Key>
+    <Property Name="ProductModelID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CatalogDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Instructions" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="rowguid" Type="Guid" Nullable="false" />
+    <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="ProductModelIllustration" Relationship="Self.FK_ProductModelIllustration_ProductModel_ProductModelID" FromRole="ProductModel" ToRole="ProductModelIllustration" />
+    <NavigationProperty Name="ProductModelProductDescriptionCulture" Relationship="Self.FK_ProductModelProductDescriptionCulture_ProductModel_ProductModelID" FromRole="ProductModel" ToRole="ProductModelProductDescriptionCulture" />
+  </EntityType>
+  <EntityType Name="ProductModelIllustration">
+    <Key>
+      <PropertyRef Name="ProductModelID" />
+      <PropertyRef Name="IllustrationID" />
+    </Key>
+    <Property Name="ProductModelID" Type="Int32" Nullable="false" />
+    <Property Name="IllustrationID" Type="Int32" Nullable="false" />
+    <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Illustration" Relationship="Self.FK_ProductModelIllustration_Illustration_IllustrationID" FromRole="ProductModelIllustration" ToRole="Illustration" />
+    <NavigationProperty Name="ProductModel" Relationship="Self.FK_ProductModelIllustration_ProductModel_ProductModelID" FromRole="ProductModelIllustration" ToRole="ProductModel" />
+  </EntityType>
+  <EntityType Name="ProductModelProductDescriptionCulture">
+    <Key>
+      <PropertyRef Name="ProductModelID" />
+      <PropertyRef Name="ProductDescriptionID" />
+      <PropertyRef Name="CultureID" />
+    </Key>
+    <Property Name="ProductModelID" Type="Int32" Nullable="false" />
+    <Property Name="ProductDescriptionID" Type="Int32" Nullable="false" />
+    <Property Name="CultureID" Type="String" MaxLength="6" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Culture" Relationship="Self.FK_ProductModelProductDescriptionCulture_Culture_CultureID" FromRole="ProductModelProductDescriptionCulture" ToRole="Culture" />
+    <NavigationProperty Name="ProductDescription" Relationship="Self.FK_ProductModelProductDescriptionCulture_ProductDescription_ProductDescriptionID" FromRole="ProductModelProductDescriptionCulture" ToRole="ProductDescription" />
+    <NavigationProperty Name="ProductModel" Relationship="Self.FK_ProductModelProductDescriptionCulture_ProductModel_ProductModelID" FromRole="ProductModelProductDescriptionCulture" ToRole="ProductModel" />
+  </EntityType>
+  <EntityType Name="ProductPhoto">
+    <Key>
+      <PropertyRef Name="ProductPhotoID" />
+    </Key>
+    <Property Name="ProductPhotoID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ThumbNailPhoto" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="ThumbnailPhotoFileName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LargePhoto" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="LargePhotoFileName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="ProductProductPhoto" Relationship="Self.FK_ProductProductPhoto_ProductPhoto_ProductPhotoID" FromRole="ProductPhoto" ToRole="ProductProductPhoto" />
+  </EntityType>
+  <EntityType Name="ProductProductPhoto">
+    <Key>
+      <PropertyRef Name="ProductID" />
+      <PropertyRef Name="ProductPhotoID" />
+    </Key>
+    <Property Name="ProductID" Type="Int32" Nullable="false" />
+    <Property Name="ProductPhotoID" Type="Int32" Nullable="false" />
+    <Property Name="Primary" Type="Boolean" Nullable="false" />
+    <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Product" Relationship="Self.FK_ProductProductPhoto_Product_ProductID" FromRole="ProductProductPhoto" ToRole="Product" />
+    <NavigationProperty Name="ProductPhoto" Relationship="Self.FK_ProductProductPhoto_ProductPhoto_ProductPhotoID" FromRole="ProductProductPhoto" ToRole="ProductPhoto" />
+  </EntityType>
+  <EntityType Name="ProductReview">
+    <Key>
+      <PropertyRef Name="ProductReviewID" />
+    </Key>
+    <Property Name="ProductReviewID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProductID" Type="Int32" Nullable="false" />
+    <Property Name="ReviewerName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ReviewDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="EmailAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Rating" Type="Int32" Nullable="false" />
+    <Property Name="Comments" Type="String" MaxLength="3850" FixedLength="false" Unicode="true" />
+    <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="ProductSubcategory">
+    <Key>
+      <PropertyRef Name="ProductSubcategoryID" />
+    </Key>
+    <Property Name="ProductSubcategoryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProductCategoryID" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="rowguid" Type="Guid" Nullable="false" />
+    <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="ScrapReason">
+    <Key>
+      <PropertyRef Name="ScrapReasonID" />
+    </Key>
+    <Property Name="ScrapReasonID" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="UnitMeasure">
+    <Key>
+      <PropertyRef Name="UnitMeasureCode" />
+    </Key>
+    <Property Name="UnitMeasureCode" Type="String" MaxLength="3" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="ProductCostHistory">
+    <Key>
+      <PropertyRef Name="ProductID" />
+      <PropertyRef Name="StartDate" />
+      <PropertyRef Name="StandardCost" />
+      <PropertyRef Name="ModifiedDate" />
+    </Key>
+    <Property Name="ProductID" Type="Int32" Nullable="false" />
+    <Property Name="StartDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="EndDate" Type="DateTime" Precision="3" />
+    <Property Name="StandardCost" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="ProductDocument">
+    <Key>
+      <PropertyRef Name="ProductID" />
+      <PropertyRef Name="ModifiedDate" />
+    </Key>
+    <Property Name="ProductID" Type="Int32" Nullable="false" />
+    <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="ProductInventory">
+    <Key>
+      <PropertyRef Name="ProductID" />
+      <PropertyRef Name="LocationID" />
+      <PropertyRef Name="Shelf" />
+      <PropertyRef Name="Bin" />
+      <PropertyRef Name="Quantity" />
+      <PropertyRef Name="rowguid" />
+      <PropertyRef Name="ModifiedDate" />
+    </Key>
+    <Property Name="ProductID" Type="Int32" Nullable="false" />
+    <Property Name="LocationID" Type="Int16" Nullable="false" />
+    <Property Name="Shelf" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Bin" Type="Byte" Nullable="false" />
+    <Property Name="Quantity" Type="Int16" Nullable="false" />
+    <Property Name="rowguid" Type="Guid" Nullable="false" />
+    <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="ProductListPriceHistory">
+    <Key>
+      <PropertyRef Name="ProductID" />
+      <PropertyRef Name="StartDate" />
+      <PropertyRef Name="ListPrice" />
+      <PropertyRef Name="ModifiedDate" />
+    </Key>
+    <Property Name="ProductID" Type="Int32" Nullable="false" />
+    <Property Name="StartDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="EndDate" Type="DateTime" Precision="3" />
+    <Property Name="ListPrice" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <Association Name="FK_ProductModelProductDescriptionCulture_Culture_CultureID">
+    <End Role="Culture" Type="Self.Culture" Multiplicity="1" />
+    <End Role="ProductModelProductDescriptionCulture" Type="Self.ProductModelProductDescriptionCulture" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Culture">
+        <PropertyRef Name="CultureID" />
+      </Principal>
+      <Dependent Role="ProductModelProductDescriptionCulture">
+        <PropertyRef Name="CultureID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductModelIllustration_Illustration_IllustrationID">
+    <End Role="Illustration" Type="Self.Illustration" Multiplicity="1" />
+    <End Role="ProductModelIllustration" Type="Self.ProductModelIllustration" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Illustration">
+        <PropertyRef Name="IllustrationID" />
+      </Principal>
+      <Dependent Role="ProductModelIllustration">
+        <PropertyRef Name="IllustrationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductProductPhoto_Product_ProductID">
+    <End Role="Product" Type="Self.Product" Multiplicity="1" />
+    <End Role="ProductProductPhoto" Type="Self.ProductProductPhoto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="ProductID" />
+      </Principal>
+      <Dependent Role="ProductProductPhoto">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductModelProductDescriptionCulture_ProductDescription_ProductDescriptionID">
+    <End Role="ProductDescription" Type="Self.ProductDescription" Multiplicity="1" />
+    <End Role="ProductModelProductDescriptionCulture" Type="Self.ProductModelProductDescriptionCulture" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductDescription">
+        <PropertyRef Name="ProductDescriptionID" />
+      </Principal>
+      <Dependent Role="ProductModelProductDescriptionCulture">
+        <PropertyRef Name="ProductDescriptionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductModelIllustration_ProductModel_ProductModelID">
+    <End Role="ProductModel" Type="Self.ProductModel" Multiplicity="1" />
+    <End Role="ProductModelIllustration" Type="Self.ProductModelIllustration" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductModel">
+        <PropertyRef Name="ProductModelID" />
+      </Principal>
+      <Dependent Role="ProductModelIllustration">
+        <PropertyRef Name="ProductModelID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductModelProductDescriptionCulture_ProductModel_ProductModelID">
+    <End Role="ProductModel" Type="Self.ProductModel" Multiplicity="1" />
+    <End Role="ProductModelProductDescriptionCulture" Type="Self.ProductModelProductDescriptionCulture" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductModel">
+        <PropertyRef Name="ProductModelID" />
+      </Principal>
+      <Dependent Role="ProductModelProductDescriptionCulture">
+        <PropertyRef Name="ProductModelID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductProductPhoto_ProductPhoto_ProductPhotoID">
+    <End Role="ProductPhoto" Type="Self.ProductPhoto" Multiplicity="1" />
+    <End Role="ProductProductPhoto" Type="Self.ProductProductPhoto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductPhoto">
+        <PropertyRef Name="ProductPhotoID" />
+      </Principal>
+      <Dependent Role="ProductProductPhoto">
+        <PropertyRef Name="ProductPhotoID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="adwentureEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Culture" EntityType="Self.Culture" />
+    <EntitySet Name="Illustration" EntityType="Self.Illustration" />
+    <EntitySet Name="Location" EntityType="Self.Location" />
+    <EntitySet Name="Product" EntityType="Self.Product" />
+    <EntitySet Name="ProductCategory" EntityType="Self.ProductCategory" />
+    <EntitySet Name="ProductDescription" EntityType="Self.ProductDescription" />
+    <EntitySet Name="ProductModel" EntityType="Self.ProductModel" />
+    <EntitySet Name="ProductModelIllustration" EntityType="Self.ProductModelIllustration" />
+    <EntitySet Name="ProductModelProductDescriptionCulture" EntityType="Self.ProductModelProductDescriptionCulture" />
+    <EntitySet Name="ProductPhoto" EntityType="Self.ProductPhoto" />
+    <EntitySet Name="ProductProductPhoto" EntityType="Self.ProductProductPhoto" />
+    <EntitySet Name="ProductReview" EntityType="Self.ProductReview" />
+    <EntitySet Name="ProductSubcategory" EntityType="Self.ProductSubcategory" />
+    <EntitySet Name="ScrapReason" EntityType="Self.ScrapReason" />
+    <EntitySet Name="UnitMeasure" EntityType="Self.UnitMeasure" />
+    <EntitySet Name="ProductCostHistory" EntityType="Self.ProductCostHistory" />
+    <EntitySet Name="ProductDocument" EntityType="Self.ProductDocument" />
+    <EntitySet Name="ProductInventory" EntityType="Self.ProductInventory" />
+    <EntitySet Name="ProductListPriceHistory" EntityType="Self.ProductListPriceHistory" />
+    <AssociationSet Name="FK_ProductModelProductDescriptionCulture_Culture_CultureID" Association="Self.FK_ProductModelProductDescriptionCulture_Culture_CultureID">
+      <End Role="Culture" EntitySet="Culture" />
+      <End Role="ProductModelProductDescriptionCulture" EntitySet="ProductModelProductDescriptionCulture" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductModelIllustration_Illustration_IllustrationID" Association="Self.FK_ProductModelIllustration_Illustration_IllustrationID">
+      <End Role="Illustration" EntitySet="Illustration" />
+      <End Role="ProductModelIllustration" EntitySet="ProductModelIllustration" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductProductPhoto_Product_ProductID" Association="Self.FK_ProductProductPhoto_Product_ProductID">
+      <End Role="Product" EntitySet="Product" />
+      <End Role="ProductProductPhoto" EntitySet="ProductProductPhoto" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductModelProductDescriptionCulture_ProductDescription_ProductDescriptionID" Association="Self.FK_ProductModelProductDescriptionCulture_ProductDescription_ProductDescriptionID">
+      <End Role="ProductDescription" EntitySet="ProductDescription" />
+      <End Role="ProductModelProductDescriptionCulture" EntitySet="ProductModelProductDescriptionCulture" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductModelIllustration_ProductModel_ProductModelID" Association="Self.FK_ProductModelIllustration_ProductModel_ProductModelID">
+      <End Role="ProductModel" EntitySet="ProductModel" />
+      <End Role="ProductModelIllustration" EntitySet="ProductModelIllustration" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductModelProductDescriptionCulture_ProductModel_ProductModelID" Association="Self.FK_ProductModelProductDescriptionCulture_ProductModel_ProductModelID">
+      <End Role="ProductModel" EntitySet="ProductModel" />
+      <End Role="ProductModelProductDescriptionCulture" EntitySet="ProductModelProductDescriptionCulture" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductProductPhoto_ProductPhoto_ProductPhotoID" Association="Self.FK_ProductProductPhoto_ProductPhoto_ProductPhotoID">
+      <End Role="ProductPhoto" EntitySet="ProductPhoto" />
+      <End Role="ProductProductPhoto" EntitySet="ProductProductPhoto" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
