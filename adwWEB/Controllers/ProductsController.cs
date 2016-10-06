@@ -24,6 +24,8 @@ namespace adwWEB.Controllers
         <text>Category</text>@Html.DropDownList("cat", new SelectList(ViewBag.cat))
         <input type="submit" value="search" />
              */
+            ViewBag.cat1 = cat;
+            ViewBag.sub1 = sub;
             ViewBag.cat = db.ProductCategory.Select(k=>k.Name);
             ViewBag.sub = db.ProductSubcategory.Select(k => k.Name);
             var result1 = (from Product in db.Product
@@ -31,6 +33,7 @@ namespace adwWEB.Controllers
                           from ProductSubcategory in ProductSubcategory_join.DefaultIfEmpty()
                           join ProductCategory in db.ProductCategory on ProductSubcategory.ProductCategoryID equals ProductCategory.ProductCategoryID into ProductCategory_join
                           from ProductCategory in ProductCategory_join.DefaultIfEmpty()
+                          
                           select new ProductViewList
                           {
                               Id = Product.ProductID,
@@ -40,6 +43,16 @@ namespace adwWEB.Controllers
                               ProductCategoryName = ProductCategory != null ? ProductCategory.Name : null
 
                           }).ToList();
+            if(cat!=null)
+            {
+                if(cat!="")
+                result1 = result1.Where(k => k.ProductCategoryName == cat).ToList();
+            }
+            if (sub != null)
+            {
+                if(sub!="")
+                result1 = result1.Where(k => k.ProductSubcategoryName == sub).ToList();
+            }
             int pageSize = 50;
             int pageNumber = (page ?? 1);
             return View(result1.ToPagedList(pageNumber, pageSize));
