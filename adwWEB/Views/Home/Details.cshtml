@@ -4,12 +4,19 @@
     ViewBag.Title = "Details";
 }
 
-<h2>usuwanie</h2>
 
 <div>
-    <h4>Detale produktów</h4>
-    <hr />
+
     <h1>@Model.Name</h1>
+    @if (Model.ProductProductPhoto.Count > 0)
+    {
+        foreach (var item in Model.ProductProductPhoto)
+        {
+            @Html.Partial("PhotoView", item.ProductPhoto)
+        }
+
+    }
+    
 
 
 </div>
