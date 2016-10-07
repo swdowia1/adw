@@ -14,14 +14,16 @@ namespace adwWEB.Controllers
     public class HomeController : Controller
     {
         private adwentureEntities db = new adwentureEntities();
-        public ActionResult MyChart()
+        public ActionResult MyChart(string nazwa,string wartosc)
         {
+            string[] toktnazwa = nazwa.Split(',');
+            string[] toktwartosc = wartosc.Split(',');
             var testChart = new Chart(width: 600, height: 400)
                 .AddTitle("Test")
                 .AddSeries(
                     name: "Employee",
-                    xValue: new[] { "Peter", "Andrew", "Julie", "Mary", "Dave" },
-                    yValues: new[] { "2", "6", "4", "5", "3" })
+                    xValue: toktnazwa,
+                    yValues: toktwartosc)
                 .GetBytes("png");
             return File(testChart, "image/png");
         }
