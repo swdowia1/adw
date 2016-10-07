@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Web;
+using System.Web.Helpers;
 using System.Web.Mvc;
 
 namespace adwWEB.Controllers
@@ -13,7 +14,17 @@ namespace adwWEB.Controllers
     public class HomeController : Controller
     {
         private adwentureEntities db = new adwentureEntities();
-
+        public ActionResult MyChart()
+        {
+            var testChart = new Chart(width: 600, height: 400)
+                .AddTitle("Test")
+                .AddSeries(
+                    name: "Employee",
+                    xValue: new[] { "Peter", "Andrew", "Julie", "Mary", "Dave" },
+                    yValues: new[] { "2", "6", "4", "5", "3" })
+                .GetBytes("png");
+            return File(testChart, "image/png");
+        }
         public ActionResult Index(int? page, string sub, string cat)
         {
             /*
@@ -64,6 +75,7 @@ namespace adwWEB.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Product product = db.Product.Find(id);
+            ViewBag.history = db.ProductCostHistory.Where(k => k.ProductID == id).ToList();
             if (product == null)
             {
                 return HttpNotFound();
