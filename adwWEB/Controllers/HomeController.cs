@@ -1,6 +1,10 @@
-﻿using System;
+﻿using adwWEB.Models;
+using adwWEB.ViewModel;
+using PagedList;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 
@@ -8,23 +12,63 @@ namespace adwWEB.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Index()
+        private adwentureEntities db = new adwentureEntities();
+
+        public ActionResult Index(int? page, string sub, string cat)
         {
-            return View();
+            /*
+                  <text>Subcategory</text>@Html.DropDownList("sub", new SelectList(ViewBag.sub))
+        <text>Category</text>@Html.DropDownList("cat", new SelectList(ViewBag.cat))
+        <input type="submit" value="search" />
+             */
+            ViewBag.cat1 = cat;
+            ViewBag.sub1 = sub;
+            ViewBag.cat = db.ProductCategory.Select(k => k.Name);
+            ViewBag.sub = db.ProductSubcategory.Select(k => k.Name);
+            var result1 = (from Product in db.Product
+                           join ProductSubcategory in db.ProductSubcategory on new { ProductSubcategoryID = (int)Product.ProductSubcategoryID } equals new { ProductSubcategoryID = ProductSubcategory.ProductSubcategoryID } into ProductSubcategory_join
+                           from ProductSubcategory in ProductSubcategory_join.DefaultIfEmpty()
+                           join ProductCategory in db.ProductCategory on ProductSubcategory.ProductCategoryID equals ProductCategory.ProductCategoryID into ProductCategory_join
+                           from ProductCategory in ProductCategory_join.DefaultIfEmpty()
+
+                           select new ProductViewList
+                           {
+                               Id = Product.ProductID,
+                               NameProduct = Product.Name,
+
+                               ProductSubcategoryName = ProductSubcategory != null ? ProductSubcategory.Name : null,
+                               ProductCategoryName = ProductCategory != null ? ProductCategory.Name : null
+
+                           }).ToList();
+            if (cat != null)
+            {
+                if (cat != "")
+                    result1 = result1.Where(k => k.ProductCategoryName == cat).ToList();
+            }
+            if (sub != null)
+            {
+                if (sub != "")
+                    result1 = result1.Where(k => k.ProductSubcategoryName == sub).ToList();
+            }
+            int pageSize = 50;
+            int pageNumber = (page ?? 1);
+            return View(result1.ToPagedList(pageNumber, pageSize));
         }
 
-        public ActionResult About()
+        //wywalismy start
+        // GET: Products/Details/5
+        public ActionResult Details(int? id)
         {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Product product = db.Product.Find(id);
+            if (product == null)
+            {
+                return HttpNotFound();
+            }
+            return View(product);
         }
     }
 }
