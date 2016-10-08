@@ -34,6 +34,7 @@
         <th>
             CategoryName
         </th>
+        <th></th>
         <th>
             Detail
         </th>
@@ -52,9 +53,12 @@
                 @Html.DisplayFor(modelItem => item.ProductCategoryName)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+          
+                @Html.CheckBoxFor(m => item.WithPhoto, new { @disabled = "disabled" })
+            </td>
+            <td>
+         
+                @Html.ActionLink("Link do opisu", "Details", new { id = item.Id }) 
             </td>
         </tr>
     }

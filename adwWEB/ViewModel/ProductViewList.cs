@@ -7,5 +7,6 @@
         public string ProductCategoryName { get; internal set; }
         public int? ProductSubcategory { get; internal set; }
         public string ProductSubcategoryName { get; set; }
+        public bool WithPhoto { get; set; }
     }
 }

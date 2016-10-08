@@ -50,7 +50,9 @@ namespace adwWEB.Controllers
                                NameProduct = Product.Name,
 
                                ProductSubcategoryName = ProductSubcategory != null ? ProductSubcategory.Name : null,
-                               ProductCategoryName = ProductCategory != null ? ProductCategory.Name : null
+                               ProductCategoryName = ProductCategory != null ? ProductCategory.Name : null,
+                               WithPhoto = Product.ProductProductPhoto.Count != 1 ? false : Product.ProductProductPhoto.FirstOrDefault().ProductPhotoID != 1 ? true : false
+                               
 
                            }).ToList();
             if (cat != null)
@@ -66,6 +68,16 @@ namespace adwWEB.Controllers
             int pageSize = 50;
             int pageNumber = (page ?? 1);
             return View(result1.ToPagedList(pageNumber, pageSize));
+        }
+
+        private bool HavePhoto(Product product)
+        {
+            if(product.ProductProductPhoto.Count==1)
+            {
+                if (product.ProductProductPhoto.ToList()[0].ProductPhotoID != 1)
+                    return true;
+            }
+            return false;
         }
 
         //wywalismy start
