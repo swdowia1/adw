@@ -103,7 +103,7 @@ namespace adwWEB.Controllers
             return false;
         }
 
-        //wywalismy start
+  
         // GET: Products/Details/5
         public ActionResult Details(int? id)
         {
