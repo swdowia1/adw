@@ -149,7 +149,6 @@ C:\dysk_d\projekty\adwWEBgit\adwWEB\bin\Microsoft.Owin.Security.OAuth.xml
 C:\dysk_d\projekty\adwWEBgit\adwWEB\bin\Microsoft.Owin.Security.Google.xml
 C:\dysk_d\projekty\adwWEBgit\adwWEB\bin\Microsoft.Owin.Security.Twitter.xml
 C:\dysk_d\projekty\adwWEBgit\adwWEB\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
-C:\dysk_d\projekty\adwWEBgit\adwWEB\obj\Debug\adwWEB.csprojResolveAssemblyReference.cache
 C:\dysk_d\projekty\adwWEBgit\adwWEB\obj\Debug\adwWEB.dll
 C:\dysk_d\projekty\adwWEBgit\adwWEB\obj\Debug\adwWEB.pdb
 C:\dysk_d\projekty\adwWEBgit — kopia\adwWEB\bin\roslyn\csc.exe

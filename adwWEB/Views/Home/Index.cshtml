@@ -26,6 +26,9 @@
 <table class="table">
     <tr>
         <th>
+            Id
+        </th>
+        <th>
             Nazwa produktu
         </th>
         <th>
@@ -44,7 +47,10 @@
     {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.NameProduct)
+                @Html.DisplayFor(modelItem => item.Product.ProductID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Product.Name)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.ProductSubcategoryName)

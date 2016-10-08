@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
+using System.Threading;
 using System.Web;
 using System.Web.Helpers;
 using System.Web.Mvc;
@@ -47,7 +48,7 @@ namespace adwWEB.Controllers
                            select new ProductViewList
                            {
                                Id = Product.ProductID,
-                               NameProduct = Product.Name,
+                               Product = Product,
 
                                ProductSubcategoryName = ProductSubcategory != null ? ProductSubcategory.Name : null,
                                ProductCategoryName = ProductCategory != null ? ProductCategory.Name : null,
@@ -84,17 +85,20 @@ namespace adwWEB.Controllers
         // GET: Products/Details/5
         public ActionResult Details(int? id)
         {
+          
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Product product = db.Product.Find(id);
-            ViewBag.history = db.ProductCostHistory.Where(k => k.ProductID == id).ToList();
+            ProductViewList result = new ProductViewList();
+            result.Product = product;
+            result.ProductCostHistory=db.ProductCostHistory.Where(k => k.ProductID == id).ToList();
             if (product == null)
             {
                 return HttpNotFound();
             }
-            return View(product);
+            return View(result);
         }
     }
 }

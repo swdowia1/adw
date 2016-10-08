@@ -1,4 +1,4 @@
-﻿@model adwWEB.Models.Product
+﻿@model adwWEB.ViewModel.ProductViewList
 
 @{
     ViewBag.Title = "Details";
@@ -7,19 +7,27 @@
 
 <div>
 
-    <h1>@Model.Name</h1>
-    @if (Model.ProductProductPhoto.Count > 0)
+        @Html.Partial("ProductHead", Model)
+    
+
+    @if (Model.Product.ProductProductPhoto.Count > 0)
     {
-        foreach (var item in Model.ProductProductPhoto)
+        foreach (var item in Model.Product.ProductProductPhoto)
         {
             @Html.Partial("PhotoView", item.ProductPhoto)
         }
 
     }
     <hr />
-    <img src="@Url.Action("MyChart",new {nazwa="a,b,c",wartosc="1,3,4"})" />
+    @if (Model.ProductCostHistory.Any())
+    {
+        <img src="@Url.Action("MyChart",new {nazwa=string.Join(",",
+                 Model.ProductCostHistory.Select(k=>k.StartDate.ToString("yyyyMMdd")).ToArray())
+                 ,wartosc = string.Join(",",Model.ProductCostHistory.Select(k => k.StandardCost.ToString()).ToArray())})" />
 
-   
+
+    }
+    
 </div>
 <p>
     

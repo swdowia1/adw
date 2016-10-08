@@ -1,10 +1,18 @@
 ﻿@model adwWEB.Models.ProductPhoto
 
-@{
-    if (Model.LargePhoto != null)
-    {
-        string imageBase64 = Convert.ToBase64String(Model.LargePhoto);
-        string imageSrc = string.Format("data:image/gif;base64,{0}", imageBase64);
-        <img src="@imageSrc"  />
-    }
-}
+
+
+<div class="panel panel-default">
+    <div class="panel-heading">Zdjecie</div>
+    <div class="panel-body">
+
+        @{
+            if (Model.LargePhoto != null)
+            {
+                string imageBase64 = Convert.ToBase64String(Model.LargePhoto);
+                string imageSrc = string.Format("data:image/gif;base64,{0}", imageBase64);
+                <img src="@imageSrc" />
+            }
+        }
+    </div>
+</div>
