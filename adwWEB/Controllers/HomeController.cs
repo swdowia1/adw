@@ -140,10 +140,10 @@ namespace adwWEB.Controllers
                            select p.ProductID;
             List<int> wynik = classFun.Losuj(randomProduct.ToList(), 5);
 
-           result.ProductListPriceHistory = db.ProductListPriceHistory.Where(k => k.ProductID == id).ToList();
+            result.ProductListPriceHistory = db.ProductListPriceHistory.Where(k => k.ProductID == id).ToList();
             result.WithPhoto = product.ProductProductPhoto.Count != 1 ? false : product.ProductProductPhoto.FirstOrDefault().ProductPhotoID != 1 ? true : false;
-            var quanityall = db.ProductInventory.Where(k => k.ProductID == id).ToList();
-            result.QuanityAll = quanityall.Sum(k => k.Quantity);
+           
+            result.QuanityAll = db.ProductInventory.Where(k => k.ProductID == id).ToList().Sum(k => k.Quantity);
             result.ProductRandom = db.Product.Where(k => wynik.Contains(k.ProductID)).ToList();
             if (product == null)
             {
