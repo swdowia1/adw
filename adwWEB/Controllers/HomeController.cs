@@ -114,7 +114,7 @@ namespace adwWEB.Controllers
             }
             Product product = db.Product.Find(id);
 
-            var result1 = (from Product in db.Product.Where(k => k.ProductID == id)
+            var resultProduct = (from Product in db.Product.Where(k => k.ProductID == id)
                            join ProductSubcategory in db.ProductSubcategory on new { ProductSubcategoryID = (int)Product.ProductSubcategoryID } equals new { ProductSubcategoryID = ProductSubcategory.ProductSubcategoryID } into ProductSubcategory_join
                            from ProductSubcategory in ProductSubcategory_join.DefaultIfEmpty()
                            join ProductCategory in db.ProductCategory on ProductSubcategory.ProductCategoryID equals ProductCategory.ProductCategoryID into ProductCategory_join
@@ -132,7 +132,7 @@ namespace adwWEB.Controllers
 
                            });
 
-            ProductViewList result = result1.FirstOrDefault();
+            ProductViewList result = resultProduct.FirstOrDefault();
 
             var randomProduct = from p in db.Product
                            join ProductSubcategory in db.ProductSubcategory.Where(k => k.ProductSubcategoryID == result.ProductSubcategory)
