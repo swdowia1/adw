@@ -100,6 +100,7 @@ namespace adwWEB.Controllers
             ProductViewList result = new ProductViewList();
             result.Product = product;
             result.ProductCostHistory = db.ProductCostHistory.Where(k => k.ProductID == id).ToList();
+            result.WithPhoto = product.ProductProductPhoto.Count != 1 ? false : product.ProductProductPhoto.FirstOrDefault().ProductPhotoID != 1 ? true : false;
             if (product == null)
             {
                 return HttpNotFound();

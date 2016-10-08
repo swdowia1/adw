@@ -7,7 +7,7 @@
 
 <div>
 
-        @Html.Partial("ProductHead", Model)
+    @Html.Partial("ProductHead", Model)
     @if (Model.WithPhoto)
     {
         foreach (var item in Model.Product.ProductProductPhoto)
@@ -16,32 +16,18 @@
         }
     }
 
-   
+
     <hr />
     @if (Model.ProductCostHistory.Any())
     {
-        <table>
-            <tr>
-                <td><img src="@Url.Action("MyChart",new {nazwa=string.Join(",",
-                 Model.ProductCostHistory.Select(k=>k.StartDate.ToString("yyyyMMdd")).ToArray())
-                 ,wartosc = string.Join(",",Model.ProductCostHistory.Select(k => k.StandardCost.ToString()).ToArray())})" /></td>
-                <td>
-
-                    @foreach (var item in Model.ProductCostHistory)
-                    {
-                        <span>@item.StartDate.ToString("yyyyMMdd")</span>: <span>@item.StandardCost.ToString()</span>
-                        <br />
-                    }
-                </td>
-            </tr>
-        </table>
+        @Html.Partial("Chart", Model.ProductCostHistory)
        
 
 
     }
-    
+
 </div>
 <p>
-    
+
     @Html.ActionLink("Back to List", "Index")
 </p>

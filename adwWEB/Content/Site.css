@@ -22,3 +22,10 @@ select,
 textarea {
     max-width: 280px;
 }
+table.price {
+    border-collapse: collapse;
+}
+
+table.price, th.price, td.price {
+    border: 1px solid black;
+}

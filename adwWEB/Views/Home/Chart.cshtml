@@ -1,0 +1,28 @@
+﻿@model List<adwWEB.Models.ProductCostHistory>
+
+
+<div class="panel panel-default">
+    <div class="panel-heading">Wykres zmian ceny</div>
+    <div class="panel-body">
+
+        <img src="@Url.Action("MyChart",new {nazwa=string.Join(",",
+                 Model.Select(k=>k.StartDate.ToString("yyyyMMdd")).ToArray())
+                 ,wartosc = string.Join(",",Model.Select(k => k.StandardCost.ToString()).ToArray())})" />
+
+        <table class="price">
+            <tr>
+                <th class="price">Data</th>
+                <th class="price">Price</th>
+            </tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td class="price">@item.StartDate.ToString("yyyyMMdd")</td>
+                    <td class="price">@item.StandardCost.ToString()</td>
+                </tr>
+            }
+        </table>
+
+    </div>
+</div>
+
