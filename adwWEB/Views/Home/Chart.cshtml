@@ -1,4 +1,4 @@
-﻿@model List<adwWEB.Models.ProductCostHistory>
+﻿@model List<adwWEB.Models.ProductListPriceHistory>
 
 
 <div class="panel panel-default">
@@ -7,7 +7,7 @@
 
         <img src="@Url.Action("MyChart",new {nazwa=string.Join(",",
                  Model.Select(k=>k.StartDate.ToString("yyyyMMdd")).ToArray())
-                 ,wartosc = string.Join(",",Model.Select(k => k.StandardCost.ToString()).ToArray())})" />
+                 ,wartosc = string.Join(",",Model.Select(k => k.ListPrice.ToString()).ToArray())})" />
 
         <table class="price">
             <tr>

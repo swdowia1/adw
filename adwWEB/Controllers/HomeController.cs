@@ -99,8 +99,10 @@ namespace adwWEB.Controllers
             Product product = db.Product.Find(id);
             ProductViewList result = new ProductViewList();
             result.Product = product;
-            result.ProductCostHistory = db.ProductCostHistory.Where(k => k.ProductID == id).ToList();
+            result.ProductListPriceHistory = db.ProductListPriceHistory.Where(k => k.ProductID == id).ToList();
             result.WithPhoto = product.ProductProductPhoto.Count != 1 ? false : product.ProductProductPhoto.FirstOrDefault().ProductPhotoID != 1 ? true : false;
+            var quanityall = db.ProductInventory.Where(k => k.ProductID == id).ToList();
+            result.QuanityAll = quanityall.Sum(k => k.Quantity);
             if (product == null)
             {
                 return HttpNotFound();

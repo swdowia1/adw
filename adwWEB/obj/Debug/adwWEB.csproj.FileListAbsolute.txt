@@ -230,5 +230,4 @@ C:\dysk_d\projekty\adwWEBgit — kopia\adwWEB\bin\Microsoft.Owin.Security.Micros
 C:\dysk_d\projekty\adwWEBgit — kopia\adwWEB\obj\Debug\adwWEB.csprojResolveAssemblyReference.cache
 C:\dysk_d\projekty\adwWEBgit — kopia\adwWEB\obj\Debug\adwWEB.dll
 C:\dysk_d\projekty\adwWEBgit — kopia\adwWEB\obj\Debug\adwWEB.pdb
-C:\dysk_d\projekty\adwWEBgit\adwWEB\obj\Debug\adwWEB.csprojResolveAssemblyReference.cache
 C:\dysk_d\projekty\adwWEBgit\adwWEB\bin\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
