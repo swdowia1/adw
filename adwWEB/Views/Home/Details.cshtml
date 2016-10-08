@@ -26,6 +26,25 @@
 
     }
 
+    <hr />
+    Inne produkty
+    @foreach (var item in Model.ProductRandom)
+    {
+
+        <table>
+
+
+            <tbody>
+                <tr data-dt-row="2" data-dt-column="0"><td>Name</td> <td>@item.Name</td></tr>
+                <tr data-dt-row="2" data-dt-column="1"><td>ProductNumber</td> <td>@item.ProductNumber</td>
+                  
+                  <tr data-dt-row="2" data-dt-column="1"> <td colspan="2">@Html.ActionLink("zobacz", "Details", new { id = item.ProductID })</td>  
+                </tr>
+            </tbody>
+
+        </table>
+    }
+
 </div>
 <p>
 
