@@ -8,16 +8,15 @@
 <div>
 
         @Html.Partial("ProductHead", Model)
-    
-
-    @if (Model.Product.ProductProductPhoto.Count > 0)
+    @if (Model.WithPhoto)
     {
         foreach (var item in Model.Product.ProductProductPhoto)
         {
             @Html.Partial("PhotoView", item.ProductPhoto)
         }
-
     }
+
+   
     <hr />
     @if (Model.ProductCostHistory.Any())
     {

@@ -15,18 +15,24 @@ namespace adwWEB.Controllers
     public class HomeController : Controller
     {
         private adwentureEntities db = new adwentureEntities();
-        public ActionResult MyChart(string nazwa,string wartosc)
+        public ActionResult MyChart(string nazwa, string wartosc)
         {
             string[] toktnazwa = nazwa.Split(',');
             string[] toktwartosc = wartosc.Split(',');
+
             var testChart = new Chart(width: 600, height: 400)
-                .AddTitle("Test")
+                .AddTitle("Price history")
                 .AddSeries(
-                    name: "Employee",
+                    name: "Price",
+         legend: "Price",
+                    axisLabel: "#VALY",
                     xValue: toktnazwa,
                     yValues: toktwartosc)
                 .GetBytes("png");
+
+            //chart.Series[seriesName].IsValueShownAsLabel = true;
             return File(testChart, "image/png");
+
         }
         public ActionResult Index(int? page, string sub, string cat)
         {
@@ -53,7 +59,7 @@ namespace adwWEB.Controllers
                                ProductSubcategoryName = ProductSubcategory != null ? ProductSubcategory.Name : null,
                                ProductCategoryName = ProductCategory != null ? ProductCategory.Name : null,
                                WithPhoto = Product.ProductProductPhoto.Count != 1 ? false : Product.ProductProductPhoto.FirstOrDefault().ProductPhotoID != 1 ? true : false
-                               
+
 
                            }).ToList();
             if (cat != null)
@@ -73,7 +79,7 @@ namespace adwWEB.Controllers
 
         private bool HavePhoto(Product product)
         {
-            if(product.ProductProductPhoto.Count==1)
+            if (product.ProductProductPhoto.Count == 1)
             {
                 if (product.ProductProductPhoto.ToList()[0].ProductPhotoID != 1)
                     return true;
@@ -85,7 +91,7 @@ namespace adwWEB.Controllers
         // GET: Products/Details/5
         public ActionResult Details(int? id)
         {
-          
+
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -93,7 +99,7 @@ namespace adwWEB.Controllers
             Product product = db.Product.Find(id);
             ProductViewList result = new ProductViewList();
             result.Product = product;
-            result.ProductCostHistory=db.ProductCostHistory.Where(k => k.ProductID == id).ToList();
+            result.ProductCostHistory = db.ProductCostHistory.Where(k => k.ProductID == id).ToList();
             if (product == null)
             {
                 return HttpNotFound();

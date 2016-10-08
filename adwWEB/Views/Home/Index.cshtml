@@ -8,11 +8,11 @@
 }
 
 <p>
-    @using (Html.BeginForm("Index", "Products", FormMethod.Get))
+    @using (Html.BeginForm("Index", "Home", FormMethod.Get))
     {
-        <text>Subcategory</text>@Html.DropDownList("sub", new SelectList(ViewBag.sub), "-please select item-")
-        <text>Category</text>@Html.DropDownList("cat", new SelectList(ViewBag.cat), "-please select item-")
-        <input type="submit" value="search" />
+        <text>Subcategory</text>@Html.DropDownList("sub", new SelectList(ViewBag.sub), "-please select item-", new { @class = "form-control" })
+        <text>Category</text>@Html.DropDownList("cat", new SelectList(ViewBag.cat), "-please select item-", new { @class = "form-control" })
+        <input type="submit" class="btn btn-success" value="search" />
     }
 </p>
 <h2>Index</h2>
