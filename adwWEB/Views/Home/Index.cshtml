@@ -10,16 +10,15 @@
 <p>
     @using (Html.BeginForm("Index", "Home", FormMethod.Get))
     {
-        <text>Subcategory</text>@Html.DropDownList("sub", new SelectList(ViewBag.sub), "-please select item-", new { @class = "form-control" })
-        <text>Category</text>@Html.DropDownList("cat", new SelectList(ViewBag.cat), "-please select item-", new { @class = "form-control" })
-        <input type="submit" class="btn btn-success" value="search" />
+        <div >
+            Subcategory @Html.DropDownList("sub", new SelectList(ViewBag.sub), "-please select item-", new { @class = "form-control" })
+         Category @Html.DropDownList("cat", new SelectList(ViewBag.cat), "-please select item-", new { @class = "form-control" })
+            <input type="submit" class="btn btn-success" value="search" />
+        </div>
     }
 </p>
-<h2>Index</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+
 
 
 @Html.PagedListPager(Model, page => Url.Action("Index", new { page, cat = ViewBag.cat1, sub = ViewBag.sub1 }))
