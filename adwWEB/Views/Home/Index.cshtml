@@ -22,6 +22,8 @@
 
 
 @Html.PagedListPager(Model, page => Url.Action("Index", new { page, cat = ViewBag.cat1, sub = ViewBag.sub1 }))
+
+
 <table class="table">
     <tr>
         <th>
