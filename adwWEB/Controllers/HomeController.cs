@@ -134,11 +134,11 @@ namespace adwWEB.Controllers
 
             ProductViewList result = result1.FirstOrDefault();
 
-            var losujemu = from p in db.Product
+            var randomProduct = from p in db.Product
                            join ProductSubcategory in db.ProductSubcategory.Where(k => k.ProductSubcategoryID == result.ProductSubcategory)
                             on new { ProductSubcategoryID = (int)p.ProductSubcategoryID } equals new { ProductSubcategoryID = ProductSubcategory.ProductSubcategoryID }
                            select p.ProductID;
-            List<int> wynik = classFun.Losuj(losujemu.ToList(), 5);
+            List<int> wynik = classFun.Losuj(randomProduct.ToList(), 5);
 
            result.ProductListPriceHistory = db.ProductListPriceHistory.Where(k => k.ProductID == id).ToList();
             result.WithPhoto = product.ProductProductPhoto.Count != 1 ? false : product.ProductProductPhoto.FirstOrDefault().ProductPhotoID != 1 ? true : false;
