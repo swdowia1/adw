@@ -59,7 +59,8 @@ namespace adwWEB.Controllers
 
                                ProductSubcategoryName = ProductSubcategory != null ? ProductSubcategory.Name : null,
                                ProductCategoryName = ProductCategory != null ? ProductCategory.Name : null,
-                               WithPhoto = Product.ProductProductPhoto.Count != 1 ? false : Product.ProductProductPhoto.FirstOrDefault().ProductPhotoID != 1 ? true : false
+                               WithPhoto = Product.ProductProductPhoto.Count>0
+                               //WithPhoto = Product.ProductProductPhoto.Count != 1 ? false : Product.ProductProductPhoto.FirstOrDefault().ProductPhotoID != 1 ? true : false
 
 
                            }).ToList();
@@ -100,22 +101,23 @@ namespace adwWEB.Controllers
             Product product = db.Product.Find(id);
 
             var resultProduct = (from Product in db.Product.Where(k => k.ProductID == id)
-                           join ProductSubcategory in db.ProductSubcategory on new { ProductSubcategoryID = (int)Product.ProductSubcategoryID } equals new { ProductSubcategoryID = ProductSubcategory.ProductSubcategoryID } into ProductSubcategory_join
-                           from ProductSubcategory in ProductSubcategory_join.DefaultIfEmpty()
-                           join ProductCategory in db.ProductCategory on ProductSubcategory.ProductCategoryID equals ProductCategory.ProductCategoryID into ProductCategory_join
-                           from ProductCategory in ProductCategory_join.DefaultIfEmpty()
-                           select new ProductView
-                           {
-                               Id = Product.ProductID,
-                               Product = Product,
-                          
-                               ProductSubcategory=ProductSubcategory.ProductSubcategoryID,
-                               ProductSubcategoryName = ProductSubcategory != null ? ProductSubcategory.Name : null,
-                               ProductCategoryName = ProductCategory != null ? ProductCategory.Name : null,
-                               WithPhoto = Product.ProductProductPhoto.Count != 1 ? false : Product.ProductProductPhoto.FirstOrDefault().ProductPhotoID != 1 ? true : false
+                                 join ProductSubcategory in db.ProductSubcategory on new { ProductSubcategoryID = (int)Product.ProductSubcategoryID } equals new { ProductSubcategoryID = ProductSubcategory.ProductSubcategoryID } into ProductSubcategory_join
+                                 from ProductSubcategory in ProductSubcategory_join.DefaultIfEmpty()
+                                 join ProductCategory in db.ProductCategory on ProductSubcategory.ProductCategoryID equals ProductCategory.ProductCategoryID into ProductCategory_join
+                                 from ProductCategory in ProductCategory_join.DefaultIfEmpty()
+                                 select new ProductView
+                                 {
+                                     Id = Product.ProductID,
+                                     Product = Product,
+
+                                     ProductSubcategory = ProductSubcategory.ProductSubcategoryID,
+                                     ProductSubcategoryName = ProductSubcategory != null ? ProductSubcategory.Name : null,
+                                     ProductCategoryName = ProductCategory != null ? ProductCategory.Name : null,
+                                     WithPhoto = Product.ProductProductPhoto.Count > 0
+                                     //WithPhoto = Product.ProductProductPhoto.Count != 1 ? false : Product.ProductProductPhoto.FirstOrDefault().ProductPhotoID != 1 ? true : false
 
 
-                           });
+                                 });
 
             ProductView result = resultProduct.FirstOrDefault();
 
@@ -126,7 +128,7 @@ namespace adwWEB.Controllers
             List<int> wynik = classFun.Losuj(randomProduct.ToList(), 5);
 
             result.ProductListPriceHistory = db.ProductListPriceHistory.Where(k => k.ProductID == id).ToList();
-            result.WithPhoto = product.ProductProductPhoto.Count != 1 ? false : product.ProductProductPhoto.FirstOrDefault().ProductPhotoID != 1 ? true : false;
+          
            
             result.QuanityAll = db.ProductInventory.Where(k => k.ProductID == id).ToList().Sum(k => k.Quantity);
             result.ProductViewListRandow = db.Product.Where(k => wynik.Contains(k.ProductID)).Select(j=>new ProductView() { Product=j}).ToList();

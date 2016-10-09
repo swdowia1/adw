@@ -18,6 +18,10 @@
         {
             <span class="btn btn-primary btn-lg">Quanity <span class="badge">@Model.QuanityAll</span></span>
         }
-       
+        else
+        {
+            @Html.ActionLink("Show", "Details", new { id = Model.Product.ProductID })
+        }
+
     </div>
 </div>
