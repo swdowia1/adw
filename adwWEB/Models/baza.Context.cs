@@ -45,6 +45,6 @@ namespace adwWEB.Models
         public virtual DbSet<ProductInventory> ProductInventory { get; set; }
         public virtual DbSet<ProductListPriceHistory> ProductListPriceHistory { get; set; }
 
-        public System.Data.Entity.DbSet<adwWEB.ViewModel.ProductViewList> ProductViewLists { get; set; }
+        public System.Data.Entity.DbSet<adwWEB.ViewModel.ProductView> ProductViewLists { get; set; }
     }
 }

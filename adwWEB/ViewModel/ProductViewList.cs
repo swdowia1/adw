@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace adwWEB.ViewModel
 {
-    public class ProductViewList
+    public class ProductView
     {
         public int Id { get; set; }
         public Product Product { get; set; }
@@ -14,6 +14,7 @@ namespace adwWEB.ViewModel
         public string ProductSubcategoryName { get; set; }
         public bool WithPhoto { get; set; }
         public List<ProductListPriceHistory> ProductListPriceHistory { get; set; }
-        public List<Product> ProductRandom { get; set; }
+   
+        public List<ProductView> ProductViewListRandow { get; set; }
     }
 }

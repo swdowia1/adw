@@ -18,21 +18,6 @@ namespace adwWEB.Controllers
         private adwentureEntities db = new adwentureEntities();
         public ActionResult MyChart(string nazwa, string wartosc)
         {
-            List<int> zbior = new List<int>();
-            zbior.Add(1);
-            zbior.Add(3);
-            zbior.Add(7);
-            zbior.Add(9);
-            zbior.Add(11);
-            zbior.Add(13);
-            zbior.Add(17);
-            zbior.Add(19);
-
-            zbior.Add(21);
-            zbior.Add(23);
-            zbior.Add(27);
-            zbior.Add(29);
-            List<int> wynik = classFun.Losuj(zbior, 4);
             string[] toktnazwa = nazwa.Split(',');
             string[] toktwartosc = wartosc.Split(',');
 
@@ -67,7 +52,7 @@ namespace adwWEB.Controllers
                            join ProductCategory in db.ProductCategory on ProductSubcategory.ProductCategoryID equals ProductCategory.ProductCategoryID into ProductCategory_join
                            from ProductCategory in ProductCategory_join.DefaultIfEmpty()
 
-                           select new ProductViewList
+                           select new ProductView
                            {
                                Id = Product.ProductID,
                                Product = Product,
@@ -119,7 +104,7 @@ namespace adwWEB.Controllers
                            from ProductSubcategory in ProductSubcategory_join.DefaultIfEmpty()
                            join ProductCategory in db.ProductCategory on ProductSubcategory.ProductCategoryID equals ProductCategory.ProductCategoryID into ProductCategory_join
                            from ProductCategory in ProductCategory_join.DefaultIfEmpty()
-                           select new ProductViewList
+                           select new ProductView
                            {
                                Id = Product.ProductID,
                                Product = Product,
@@ -132,7 +117,7 @@ namespace adwWEB.Controllers
 
                            });
 
-            ProductViewList result = resultProduct.FirstOrDefault();
+            ProductView result = resultProduct.FirstOrDefault();
 
             var randomProduct = from p in db.Product
                            join ProductSubcategory in db.ProductSubcategory.Where(k => k.ProductSubcategoryID == result.ProductSubcategory)
@@ -144,7 +129,7 @@ namespace adwWEB.Controllers
             result.WithPhoto = product.ProductProductPhoto.Count != 1 ? false : product.ProductProductPhoto.FirstOrDefault().ProductPhotoID != 1 ? true : false;
            
             result.QuanityAll = db.ProductInventory.Where(k => k.ProductID == id).ToList().Sum(k => k.Quantity);
-            result.ProductRandom = db.Product.Where(k => wynik.Contains(k.ProductID)).ToList();
+            result.ProductViewListRandow = db.Product.Where(k => wynik.Contains(k.ProductID)).Select(j=>new ProductView() { Product=j}).ToList();
             if (product == null)
             {
                 return HttpNotFound();

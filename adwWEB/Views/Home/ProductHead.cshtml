@@ -1,7 +1,7 @@
-﻿@model adwWEB.ViewModel.ProductViewList
+﻿@model adwWEB.ViewModel.ProductView
 
 <div class="panel panel-default">
-    <div class="panel-heading">Podstawowe informacje</div>
+    <div class="panel-heading">@Model.Product.Name</div>
     <div class="panel-body">
 
 
@@ -13,6 +13,11 @@
                 <tr data-dt-row="2" data-dt-column="1"><td>ProductNumber</td> <td>@Model.Product.ProductNumber</td></tr>
             </tbody>
 
-        </table><span class="btn btn-primary btn-lg">Quanity <span class="badge">@Model.QuanityAll</span></span>
+        </table>
+        @if (Model.QuanityAll > 0)
+        {
+            <span class="btn btn-primary btn-lg">Quanity <span class="badge">@Model.QuanityAll</span></span>
+        }
+       
     </div>
 </div>
