@@ -11,8 +11,10 @@
     @using (Html.BeginForm("Index", "Home", FormMethod.Get))
     {
         <div >
+            Category @Html.DropDownList("cat", new SelectList(ViewBag.cat), "-please select item-", new { @class = "form-control" })
+
+
             Subcategory @Html.DropDownList("sub", new SelectList(ViewBag.sub), "-please select item-", new { @class = "form-control" })
-         Category @Html.DropDownList("cat", new SelectList(ViewBag.cat), "-please select item-", new { @class = "form-control" })
             <input type="submit" class="btn btn-success" value="search" />
         </div>
     }

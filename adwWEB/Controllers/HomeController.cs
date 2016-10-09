@@ -59,8 +59,8 @@ namespace adwWEB.Controllers
 
                                ProductSubcategoryName = ProductSubcategory != null ? ProductSubcategory.Name : null,
                                ProductCategoryName = ProductCategory != null ? ProductCategory.Name : null,
-                               WithPhoto = Product.ProductProductPhoto.Count>0
-                               //WithPhoto = Product.ProductProductPhoto.Count != 1 ? false : Product.ProductProductPhoto.FirstOrDefault().ProductPhotoID != 1 ? true : false
+                              
+                               WithPhoto = Product.ProductProductPhoto.Count != 1 ? false : Product.ProductProductPhoto.FirstOrDefault().ProductPhotoID != 1 ? true : false
 
 
                            }).ToList();
