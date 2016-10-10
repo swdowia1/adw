@@ -1,4 +1,5 @@
 # adw
+nały konflikt
 projekt Radio
 co zminiam
 Witam
