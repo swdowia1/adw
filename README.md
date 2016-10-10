@@ -1,10 +1,4 @@
 # adw
-nały konflikt
-projekt Radio
-co zminiam
-Witam
-
-
 Wykonałem zadanie, poniżej przedstawiam krótki opis:
 
 
