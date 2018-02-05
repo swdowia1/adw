@@ -70,7 +70,7 @@ namespace adwWEB.Controllers
                 if (sub != "")
                     result1 = result1.Where(k => k.ProductSubcategoryName == sub).ToList();
             }
-            int pageSize = 50;
+            int pageSize = 45;
             int pageNumber = (page ?? 1);
             return View(result1.ToPagedList(pageNumber, pageSize));
         }
