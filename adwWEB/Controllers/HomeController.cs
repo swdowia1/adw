@@ -37,11 +37,7 @@ namespace adwWEB.Controllers
         }
         public ActionResult Index(int? page, string sub, string cat)
         {
-            /*
-                  <text>Subcategory</text>@Html.DropDownList("sub", new SelectList(ViewBag.sub))
-        <text>Category</text>@Html.DropDownList("cat", new SelectList(ViewBag.cat))
-        <input type="submit" value="search" />
-             */
+         
             ViewBag.cat1 = cat;
             ViewBag.sub1 = sub;
             ViewBag.cat = db.ProductCategory.Select(k => k.Name);
